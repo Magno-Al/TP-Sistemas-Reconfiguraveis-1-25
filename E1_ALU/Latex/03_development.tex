@@ -1,0 +1,80 @@
+\section{Desenvolvimento}
+
+A ALU foi implementada utilizando a linguagem VHDL, respeitando a estrutura combinacional exigida no projeto, sem o uso de elementos sequenciais como \textit{flip-flops} ou \textit{latches}.
+
+\subsection{Implementação VHDL}
+
+A seguir, apresenta-se a declaração da entidade \texttt{alu}, incluindo as portas de entrada e saída:
+
+\begin{figure}[H]
+\centering
+\lstinputlisting[language=VHDL, firstline=1, lastline=19, caption={Declaração da entidade \texttt{alu}}, label={lst:alu-entity}]{code/alu.vhd}
+\end{figure}
+
+A seguir, são apresentados os sinais internos utilizados na arquitetura:
+
+\begin{figure}[H]
+\centering
+\lstinputlisting[language=VHDL, firstline=21, lastline=24, caption={Declaração dos sinais internos}, label={lst:alu-signals}]{code/alu.vhd}
+\end{figure}
+
+A implementação das operações de soma e subtração com e sem carry pode ser vista abaixo:
+
+\begin{figure}[H]
+\centering
+\lstinputlisting[language=VHDL, firstline=26, lastline=36, caption={Cálculo de soma e subtração}, label={lst:alu-add-sub}]{code/alu.vhd}
+\end{figure}
+
+As 16 operações são selecionadas por meio da diretiva \texttt{with...select}, conforme segue:
+
+\begin{figure}[H]
+\centering
+\lstinputlisting[language=VHDL, firstline=39, lastline=58, caption={Bloco de seleção de operações da ALU}, label={lst:alu-opselect}]{code/alu.vhd}
+\end{figure}    
+
+A lógica de atribuição do sinal \texttt{c\_out} considera o tipo de operação realizada:
+
+\begin{figure}[H]
+\centering
+\lstinputlisting[language=VHDL, firstline=60, lastline=66, caption={Atribuição de \texttt{c\_out}}, label={lst:alu-cout}]{code/alu.vhd}
+\end{figure}
+
+O sinal \texttt{z\_out} é ativado quando o resultado da operação é igual a zero:
+
+\begin{figure}[H]
+\centering
+\lstinputlisting[language=VHDL, firstline=68, lastline=69, caption={Atribuição de \texttt{z\_out}}, label={lst:alu-zout}]{code/alu.vhd}
+\end{figure}
+
+A lógica de \texttt{v\_out} detecta overflow nas operações aritméticas:
+
+\begin{figure}[H]
+\centering
+\lstinputlisting[language=VHDL, firstline=71, lastline=79, caption={Atribuição de \texttt{v\_out}}, label={lst:alu-vout}]{code/alu.vhd}
+\end{figure}
+
+A saída principal da ALU é atribuída com o valor de \texttt{temp\_r}:
+
+\begin{figure}[H]
+\centering
+\lstinputlisting[language=VHDL, firstline=81, lastline=83, caption={Atribuição final da saída \texttt{r\_out}}, label={lst:alu-rout}]{code/alu.vhd}
+\end{figure}
+
+\subsection{Organização dos Arquivos do Projeto}
+
+O projeto foi salvo no diretório \texttt{E1\_ALU/ALU}, contendo os seguintes arquivos principais:
+
+\begin{itemize}
+  \item \textbf{alu.vhd}: código-fonte VHDL da ALU, com estrutura combinacional.
+  
+  \item \textbf{alu.vwf}: arquivo de forma de onda (Waveform File), utilizado para simulação no Quartus II.
+  
+  \item \textbf{Relatórios de compilação}: arquivos com extensão \texttt{.rpt}, \texttt{.summary}, \texttt{.sof}, \texttt{.pof}, entre outros, gerados automaticamente pelo ambiente de desenvolvimento Quartus II durante a síntese e análise do projeto.
+  
+  \item \textbf{alu.sim.rpt}: relatório contendo os resultados das simulações funcionais realizadas sobre o circuito.
+  
+  \item \textbf{alu.done}: arquivo que indica a compilação bem-sucedida do projeto.
+\end{itemize}
+
+
+    

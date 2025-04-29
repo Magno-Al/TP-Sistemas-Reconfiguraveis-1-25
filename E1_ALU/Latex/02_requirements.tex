@@ -1,0 +1,69 @@
+\section{Requisitos do Projeto}
+
+O presente trabalho tem como finalidade o desenvolvimento de uma Unidade Lógica e Aritmética (ALU) descrita em VHDL, operando com palavras de 8 bits e implementada de forma totalmente combinacional. O projeto deve ser implementado e simulado utilizando exclusivamente a versão 9.1sp2 do software Quartus II.
+
+A seguir, são apresentados os requisitos funcionais e técnicos que a ALU deve atender.
+
+\subsection{Requisitos Funcionais}
+
+A ALU deve ser capaz de realizar 16 operações distintas, conforme o valor de entrada de seleção de operação (\texttt{op\_sel[3..0]}), agrupadas em:
+
+\subsubsection*{Operações Aritméticas}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|l|}
+\hline
+\textbf{op\_sel} & \textbf{Mnemônico} & \textbf{Descrição} \\ \hline
+0000 & ADD  & Soma sem carry-in: $r\_out = a + b$ \\ \hline
+0001 & ADDC & Soma com carry-in: $r\_out = a + b + c\_in$ \\ \hline
+0010 & SUB  & Subtração sem carry-in: $r\_out = a - b$ \\ \hline
+0011 & SUBC & Subtração com carry-in: $r\_out = a - b - c\_in$ \\ \hline
+\end{tabular}
+\caption{Operações aritméticas}
+\end{table}
+
+\subsubsection*{Operações Lógicas}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|l|}
+\hline
+\textbf{op\_sel} & \textbf{Mnemônico} & \textbf{Descrição} \\ \hline
+0100 & AND  & AND lógico bit a bit: $r\_out = a \land b$ \\ \hline
+0101 & OR   & OR lógico bit a bit: $r\_out = a \lor b$ \\ \hline
+0110 & XOR  & XOR lógico bit a bit: $r\_out = a \oplus b$ \\ \hline
+0111 & NOT  & Complemento bit a bit: $r\_out = \sim a$ \\ \hline
+\end{tabular}
+\caption{Operações lógicas}
+\end{table}
+
+\subsubsection*{Rotações e Deslocamentos}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|l|}
+\hline
+\textbf{op\_sel} & \textbf{Mnemônico} & \textbf{Descrição} \\ \hline
+1000 & RL   & Rotação à esquerda: $r\_out = a[6..0], a[7]$ \\ \hline
+1001 & RR   & Rotação à direita: $r\_out = a[0], a[7..1]$ \\ \hline
+1010 & RLC  & Rotação à esquerda via carry: $r\_out = a[6..0], c\_in$ \\ \hline
+1011 & RRC  & Rotação à direita via carry: $r\_out = c\_in, a[7..1]$ \\ \hline
+1100 & SLL  & Deslocamento lógico à esquerda: $r\_out = a[6..0], 0$ \\ \hline
+1101 & SRL  & Deslocamento lógico à direita: $r\_out = 0, a[7..1]$ \\ \hline
+1110 & SRA  & Deslocamento aritmético à direita: $r\_out = a[7], a[7..1]$ \\ \hline
+\end{tabular}
+\caption{Rotações e deslocamentos}
+\end{table}
+
+\subsubsection*{Bypass}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|l|}
+\hline
+\textbf{op\_sel} & \textbf{Mnemônico} & \textbf{Descrição} \\ \hline
+1111 & PASS\_B & Passa o valor de \texttt{b\_in} diretamente: $r\_out = b$ \\ \hline
+\end{tabular}
+\caption{Operação de bypass}
+\end{table}
