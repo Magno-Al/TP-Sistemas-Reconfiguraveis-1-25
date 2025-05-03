@@ -1,5 +1,5 @@
 Simulator report for alu
-Mon Apr 28 08:39:06 2025
+Sat May 03 09:35:54 2025
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -45,9 +45,9 @@ applicable agreement for further details.
 +-----------------------------+--------------+
 ; Simulation Start Time       ; 0 ps         ;
 ; Simulation End Time         ; 40.0 ns      ;
-; Simulation Netlist Size     ; 718 nodes    ;
-; Simulation Coverage         ;      24.79 % ;
-; Total Number of Transitions ; 578          ;
+; Simulation Netlist Size     ; 723 nodes    ;
+; Simulation Coverage         ;      23.65 % ;
+; Total Number of Transitions ; 552          ;
 ; Simulation Breakpoints      ; 0            ;
 ; Family                      ; Stratix II   ;
 +-----------------------------+--------------+
@@ -93,13 +93,13 @@ Please use Quartus II to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      24.79 % ;
-; Total nodes checked                                 ; 718          ;
-; Total output ports checked                          ; 718          ;
-; Total output ports with complete 1/0-value coverage ; 178          ;
-; Total output ports with no 1/0-value coverage       ; 479          ;
-; Total output ports with no 1-value coverage         ; 510          ;
-; Total output ports with no 0-value coverage         ; 509          ;
+; Total coverage as a percentage                      ;      23.65 % ;
+; Total nodes checked                                 ; 723          ;
+; Total output ports checked                          ; 723          ;
+; Total output ports with complete 1/0-value coverage ; 171          ;
+; Total output ports with no 1/0-value coverage       ; 489          ;
+; Total output ports with no 1-value coverage         ; 519          ;
+; Total output ports with no 0-value coverage         ; 522          ;
 +-----------------------------------------------------+--------------+
 
 
@@ -115,8 +115,6 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |alu|temp_r~18                                                  ; |alu|temp_r~18                                                  ; out0             ;
 ; |alu|temp_r~22                                                  ; |alu|temp_r~22                                                  ; out0             ;
 ; |alu|v_out~2                                                    ; |alu|v_out~2                                                    ; out0             ;
-; |alu|v_out~3                                                    ; |alu|v_out~3                                                    ; out0             ;
-; |alu|v_out~4                                                    ; |alu|v_out~4                                                    ; out0             ;
 ; |alu|a_in[1]                                                    ; |alu|a_in[1]                                                    ; out              ;
 ; |alu|a_in[2]                                                    ; |alu|a_in[2]                                                    ; out              ;
 ; |alu|a_in[5]                                                    ; |alu|a_in[5]                                                    ; out              ;
@@ -142,11 +140,10 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |alu|Add0~33                                                    ; |alu|Add0~33                                                    ; out0             ;
 ; |alu|Add0~34                                                    ; |alu|Add0~34                                                    ; out0             ;
 ; |alu|Add0~36                                                    ; |alu|Add0~36                                                    ; out0             ;
-; |alu|Add1~2                                                     ; |alu|Add1~2                                                     ; out0             ;
 ; |alu|Add1~4                                                     ; |alu|Add1~4                                                     ; out0             ;
-; |alu|Add1~10                                                    ; |alu|Add1~10                                                    ; out0             ;
 ; |alu|Add1~12                                                    ; |alu|Add1~12                                                    ; out0             ;
 ; |alu|Add1~14                                                    ; |alu|Add1~14                                                    ; out0             ;
+; |alu|Add1~16                                                    ; |alu|Add1~16                                                    ; out0             ;
 ; |alu|Add2~1                                                     ; |alu|Add2~1                                                     ; out0             ;
 ; |alu|Add2~4                                                     ; |alu|Add2~4                                                     ; out0             ;
 ; |alu|Add2~5                                                     ; |alu|Add2~5                                                     ; out0             ;
@@ -176,23 +173,19 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |alu|Add2~34                                                    ; |alu|Add2~34                                                    ; out0             ;
 ; |alu|Add2~35                                                    ; |alu|Add2~35                                                    ; out0             ;
 ; |alu|Add2~37                                                    ; |alu|Add2~37                                                    ; out0             ;
-; |alu|Add3~0                                                     ; |alu|Add3~0                                                     ; out0             ;
-; |alu|Add3~3                                                     ; |alu|Add3~3                                                     ; out0             ;
-; |alu|Add3~4                                                     ; |alu|Add3~4                                                     ; out0             ;
 ; |alu|Add3~6                                                     ; |alu|Add3~6                                                     ; out0             ;
-; |alu|Add3~7                                                     ; |alu|Add3~7                                                     ; out0             ;
 ; |alu|Add3~8                                                     ; |alu|Add3~8                                                     ; out0             ;
 ; |alu|Add3~9                                                     ; |alu|Add3~9                                                     ; out0             ;
-; |alu|Add3~10                                                    ; |alu|Add3~10                                                    ; out0             ;
 ; |alu|Add3~11                                                    ; |alu|Add3~11                                                    ; out0             ;
 ; |alu|Add3~12                                                    ; |alu|Add3~12                                                    ; out0             ;
-; |alu|Add3~13                                                    ; |alu|Add3~13                                                    ; out0             ;
 ; |alu|Add3~14                                                    ; |alu|Add3~14                                                    ; out0             ;
 ; |alu|Add3~15                                                    ; |alu|Add3~15                                                    ; out0             ;
 ; |alu|Add3~17                                                    ; |alu|Add3~17                                                    ; out0             ;
 ; |alu|Add3~18                                                    ; |alu|Add3~18                                                    ; out0             ;
 ; |alu|Add3~20                                                    ; |alu|Add3~20                                                    ; out0             ;
 ; |alu|Add3~21                                                    ; |alu|Add3~21                                                    ; out0             ;
+; |alu|Add3~23                                                    ; |alu|Add3~23                                                    ; out0             ;
+; |alu|Add3~24                                                    ; |alu|Add3~24                                                    ; out0             ;
 ; |alu|lpm_mux:Mux7|mux_lpc:auto_generated|l1_w0_n4_mux_dataout~0 ; |alu|lpm_mux:Mux7|mux_lpc:auto_generated|l1_w0_n4_mux_dataout~0 ; out0             ;
 ; |alu|lpm_mux:Mux7|mux_lpc:auto_generated|l1_w0_n4_mux_dataout   ; |alu|lpm_mux:Mux7|mux_lpc:auto_generated|l1_w0_n4_mux_dataout   ; out0             ;
 ; |alu|lpm_mux:Mux7|mux_lpc:auto_generated|l1_w0_n5_mux_dataout~0 ; |alu|lpm_mux:Mux7|mux_lpc:auto_generated|l1_w0_n5_mux_dataout~0 ; out0             ;
@@ -359,7 +352,7 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |alu|c_out~8                                                    ; |alu|c_out~8                                                    ; out              ;
 ; |alu|c_out~9                                                    ; |alu|c_out~9                                                    ; out0             ;
 ; |alu|c_out~10                                                   ; |alu|c_out~10                                                   ; out              ;
-; |alu|v_out~1                                                    ; |alu|v_out~1                                                    ; out0             ;
+; |alu|v_out~3                                                    ; |alu|v_out~3                                                    ; out0             ;
 ; |alu|v_out~5                                                    ; |alu|v_out~5                                                    ; out              ;
 ; |alu|v_out~6                                                    ; |alu|v_out~6                                                    ; out0             ;
 ; |alu|v_out~7                                                    ; |alu|v_out~7                                                    ; out0             ;
@@ -405,14 +398,16 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |alu|Add0~35                                                    ; |alu|Add0~35                                                    ; out0             ;
 ; |alu|Add1~0                                                     ; |alu|Add1~0                                                     ; out0             ;
 ; |alu|Add1~1                                                     ; |alu|Add1~1                                                     ; out0             ;
+; |alu|Add1~2                                                     ; |alu|Add1~2                                                     ; out0             ;
 ; |alu|Add1~3                                                     ; |alu|Add1~3                                                     ; out0             ;
 ; |alu|Add1~5                                                     ; |alu|Add1~5                                                     ; out0             ;
-; |alu|Add1~6                                                     ; |alu|Add1~6                                                     ; out0             ;
 ; |alu|Add1~7                                                     ; |alu|Add1~7                                                     ; out0             ;
 ; |alu|Add1~8                                                     ; |alu|Add1~8                                                     ; out0             ;
 ; |alu|Add1~9                                                     ; |alu|Add1~9                                                     ; out0             ;
+; |alu|Add1~10                                                    ; |alu|Add1~10                                                    ; out0             ;
 ; |alu|Add1~11                                                    ; |alu|Add1~11                                                    ; out0             ;
 ; |alu|Add1~13                                                    ; |alu|Add1~13                                                    ; out0             ;
+; |alu|Add1~15                                                    ; |alu|Add1~15                                                    ; out0             ;
 ; |alu|Add2~0                                                     ; |alu|Add2~0                                                     ; out0             ;
 ; |alu|Add2~2                                                     ; |alu|Add2~2                                                     ; out0             ;
 ; |alu|Add2~3                                                     ; |alu|Add2~3                                                     ; out0             ;
@@ -421,11 +416,18 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |alu|Add2~16                                                    ; |alu|Add2~16                                                    ; out0             ;
 ; |alu|Add2~21                                                    ; |alu|Add2~21                                                    ; out0             ;
 ; |alu|Add2~22                                                    ; |alu|Add2~22                                                    ; out0             ;
+; |alu|Add3~0                                                     ; |alu|Add3~0                                                     ; out0             ;
 ; |alu|Add3~1                                                     ; |alu|Add3~1                                                     ; out0             ;
 ; |alu|Add3~2                                                     ; |alu|Add3~2                                                     ; out0             ;
+; |alu|Add3~3                                                     ; |alu|Add3~3                                                     ; out0             ;
+; |alu|Add3~4                                                     ; |alu|Add3~4                                                     ; out0             ;
 ; |alu|Add3~5                                                     ; |alu|Add3~5                                                     ; out0             ;
+; |alu|Add3~7                                                     ; |alu|Add3~7                                                     ; out0             ;
+; |alu|Add3~10                                                    ; |alu|Add3~10                                                    ; out0             ;
+; |alu|Add3~13                                                    ; |alu|Add3~13                                                    ; out0             ;
 ; |alu|Add3~16                                                    ; |alu|Add3~16                                                    ; out0             ;
 ; |alu|Add3~19                                                    ; |alu|Add3~19                                                    ; out0             ;
+; |alu|Add3~22                                                    ; |alu|Add3~22                                                    ; out0             ;
 ; |alu|Equal0~0                                                   ; |alu|Equal0~0                                                   ; out0             ;
 ; |alu|Equal1~0                                                   ; |alu|Equal1~0                                                   ; out0             ;
 ; |alu|Equal2~0                                                   ; |alu|Equal2~0                                                   ; out0             ;
@@ -876,8 +878,12 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |alu|c_out~9                                                    ; |alu|c_out~9                                                    ; out0             ;
 ; |alu|v_out~0                                                    ; |alu|v_out~0                                                    ; out0             ;
 ; |alu|v_out~1                                                    ; |alu|v_out~1                                                    ; out0             ;
+; |alu|v_out~3                                                    ; |alu|v_out~3                                                    ; out0             ;
+; |alu|v_out~4                                                    ; |alu|v_out~4                                                    ; out0             ;
 ; |alu|v_out~5                                                    ; |alu|v_out~5                                                    ; out              ;
+; |alu|v_out~7                                                    ; |alu|v_out~7                                                    ; out0             ;
 ; |alu|v_out~8                                                    ; |alu|v_out~8                                                    ; out0             ;
+; |alu|v_out~9                                                    ; |alu|v_out~9                                                    ; out0             ;
 ; |alu|v_out~10                                                   ; |alu|v_out~10                                                   ; out              ;
 ; |alu|a_in[3]                                                    ; |alu|a_in[3]                                                    ; out              ;
 ; |alu|a_in[4]                                                    ; |alu|a_in[4]                                                    ; out              ;
@@ -919,21 +925,30 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |alu|Add0~25                                                    ; |alu|Add0~25                                                    ; out0             ;
 ; |alu|Add0~30                                                    ; |alu|Add0~30                                                    ; out0             ;
 ; |alu|Add0~35                                                    ; |alu|Add0~35                                                    ; out0             ;
-; |alu|Add1~0                                                     ; |alu|Add1~0                                                     ; out0             ;
+; |alu|Add1~1                                                     ; |alu|Add1~1                                                     ; out0             ;
+; |alu|Add1~3                                                     ; |alu|Add1~3                                                     ; out0             ;
 ; |alu|Add1~5                                                     ; |alu|Add1~5                                                     ; out0             ;
 ; |alu|Add1~6                                                     ; |alu|Add1~6                                                     ; out0             ;
 ; |alu|Add1~7                                                     ; |alu|Add1~7                                                     ; out0             ;
 ; |alu|Add1~8                                                     ; |alu|Add1~8                                                     ; out0             ;
 ; |alu|Add1~9                                                     ; |alu|Add1~9                                                     ; out0             ;
+; |alu|Add1~10                                                    ; |alu|Add1~10                                                    ; out0             ;
 ; |alu|Add1~11                                                    ; |alu|Add1~11                                                    ; out0             ;
 ; |alu|Add1~13                                                    ; |alu|Add1~13                                                    ; out0             ;
+; |alu|Add1~15                                                    ; |alu|Add1~15                                                    ; out0             ;
 ; |alu|Add2~15                                                    ; |alu|Add2~15                                                    ; out0             ;
 ; |alu|Add2~16                                                    ; |alu|Add2~16                                                    ; out0             ;
 ; |alu|Add2~21                                                    ; |alu|Add2~21                                                    ; out0             ;
 ; |alu|Add2~22                                                    ; |alu|Add2~22                                                    ; out0             ;
 ; |alu|Add2~36                                                    ; |alu|Add2~36                                                    ; out0             ;
+; |alu|Add3~1                                                     ; |alu|Add3~1                                                     ; out0             ;
+; |alu|Add3~4                                                     ; |alu|Add3~4                                                     ; out0             ;
+; |alu|Add3~7                                                     ; |alu|Add3~7                                                     ; out0             ;
+; |alu|Add3~10                                                    ; |alu|Add3~10                                                    ; out0             ;
+; |alu|Add3~13                                                    ; |alu|Add3~13                                                    ; out0             ;
 ; |alu|Add3~16                                                    ; |alu|Add3~16                                                    ; out0             ;
 ; |alu|Add3~19                                                    ; |alu|Add3~19                                                    ; out0             ;
+; |alu|Add3~22                                                    ; |alu|Add3~22                                                    ; out0             ;
 ; |alu|Equal0~0                                                   ; |alu|Equal0~0                                                   ; out0             ;
 ; |alu|Equal1~0                                                   ; |alu|Equal1~0                                                   ; out0             ;
 ; |alu|Equal2~0                                                   ; |alu|Equal2~0                                                   ; out0             ;
@@ -1340,7 +1355,7 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II Simulator
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Mon Apr 28 08:39:06 2025
+    Info: Processing started: Sat May 03 09:35:54 2025
 Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off alu -c alu
 Info: Using vector source file "C:/Users/Pablo_LasCazas/Desktop/SI - Primeiro Projeto/ALU/alu.vwf"
 Info: Overwriting simulation input file with simulation results
@@ -1348,12 +1363,12 @@ Info: Overwriting simulation input file with simulation results
 Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
 Info: Simulation partitioned into 1 sub-simulations
-Info: Simulation coverage is      24.79 %
-Info: Number of transitions in simulation is 578
+Info: Simulation coverage is      23.65 %
+Info: Number of transitions in simulation is 552
 Info: Vector file alu.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
 Info: Quartus II Simulator was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 148 megabytes
-    Info: Processing ended: Mon Apr 28 08:39:06 2025
+    Info: Peak virtual memory: 147 megabytes
+    Info: Processing ended: Sat May 03 09:35:54 2025
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 

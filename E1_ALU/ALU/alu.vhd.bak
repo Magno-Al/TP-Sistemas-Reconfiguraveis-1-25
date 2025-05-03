@@ -22,19 +22,21 @@ ARCHITECTURE arch OF alu IS
 	SIGNAL temp_soma : STD_LOGIC_VECTOR(8 DOWNTO 0); -- Resultado da soma
 	SIGNAL temp_sub  : STD_LOGIC_VECTOR(8 DOWNTO 0); -- Resultado da subtração
 	SIGNAL temp_r    : STD_LOGIC_VECTOR(7 DOWNTO 0); -- Resultado final
+	SIGNAL c_ext : unsigned(8 downto 0);
 BEGIN
+	c_ext <= (8 downto 1 => '0') & c_in;
+	
 	-- Cálculo da Soma (ADD e ADDC)
 	temp_soma <= 
-	std_logic_vector(unsigned('0' & a_in) + unsigned('0' & b_in)) WHEN op_sel = "0000" ELSE
-	std_logic_vector(unsigned('0' & a_in) + unsigned('0' & b_in) + 1) WHEN op_sel = "0001" ELSE
+	STD_LOGIC_VECTOR(unsigned('0' & a_in) + unsigned('0' & b_in)) WHEN op_sel = "0000" ELSE
+	STD_LOGIC_VECTOR(unsigned('0' & a_in) + unsigned('0' & b_in) + c_ext) WHEN op_sel = "0001" ELSE
 	(others => '0');
 
 	-- Cálculo da Subtração (SUB e SUBC)
 	temp_sub <= 
-	std_logic_vector(unsigned('0' & a_in) - unsigned('0' & b_in)) WHEN op_sel = "0010" ELSE
-	std_logic_vector(unsigned('0' & a_in) - unsigned('0' & b_in) - 1) WHEN op_sel = "0011" ELSE
+	STD_LOGIC_VECTOR(unsigned('0' & a_in) - unsigned('0' & b_in)) WHEN op_sel = "0010" ELSE
+	STD_LOGIC_VECTOR(unsigned('0' & a_in) + unsigned('0' & b_in) - c_ext) WHEN op_sel = "0011" ELSE
 	(others => '0');
-
     
     WITH op_sel SELECT
 		temp_r <= 
@@ -76,7 +78,6 @@ BEGIN
 		-- Overflow na Subtração
 		((a_in(7) AND NOT b_in(7) AND NOT temp_r(7)) OR (NOT a_in(7) AND b_in(7) AND temp_r(7)))
 		WHEN (op_sel = "0010" OR op_sel = "0011") ELSE
-		-- Don't Care para outras operações
 		'0';
 
 	-- Atribuição final da saída

@@ -22,19 +22,21 @@ ARCHITECTURE arch OF alu IS
 	SIGNAL temp_soma : STD_LOGIC_VECTOR(8 DOWNTO 0); -- Resultado da soma
 	SIGNAL temp_sub  : STD_LOGIC_VECTOR(8 DOWNTO 0); -- Resultado da subtração
 	SIGNAL temp_r    : STD_LOGIC_VECTOR(7 DOWNTO 0); -- Resultado final
+	SIGNAL c_ext : unsigned(8 downto 0);
 BEGIN
+	c_ext <= (8 downto 1 => '0') & c_in;
+	
 	-- Cálculo da Soma (ADD e ADDC)
 	temp_soma <= 
 	STD_LOGIC_VECTOR(unsigned('0' & a_in) + unsigned('0' & b_in)) WHEN op_sel = "0000" ELSE
-	STD_LOGIC_VECTOR(unsigned('0' & a_in) + unsigned('0' & b_in) + 1) WHEN op_sel = "0001" ELSE
+	STD_LOGIC_VECTOR(unsigned('0' & a_in) + unsigned('0' & b_in) + c_ext) WHEN op_sel = "0001" ELSE
 	(others => '0');
 
 	-- Cálculo da Subtração (SUB e SUBC)
 	temp_sub <= 
 	STD_LOGIC_VECTOR(unsigned('0' & a_in) - unsigned('0' & b_in)) WHEN op_sel = "0010" ELSE
-	STD_LOGIC_VECTOR(unsigned('0' & a_in) - unsigned('0' & b_in) - 1) WHEN op_sel = "0011" ELSE
+	STD_LOGIC_VECTOR(unsigned('0' & a_in) - unsigned('0' & b_in) - c_ext) WHEN op_sel = "0011" ELSE
 	(others => '0');
-
     
     WITH op_sel SELECT
 		temp_r <= 

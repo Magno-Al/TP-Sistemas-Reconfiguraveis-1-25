@@ -16,8 +16,14 @@ Nesta simulação, observa-se que o valor de \texttt{r\_out} corresponde correta
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{images/alu_0001.png}
+\includegraphics[width=\textwidth]{images/alu_0001_com_carry_in.png}
 \caption{Operação ADDC (\texttt{op\_sel = 0001}): Soma com carry-in}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/alu_0001_sem_carry_in.png}
+\caption{Operação ADDC (\texttt{op\_sel = 0001}): Soma sem carry-in}
 \end{figure}
 
 Neste caso, o bit de carry-in (\texttt{c\_in}) é adicionado ao resultado, afetando tanto o valor de saída quanto o \texttt{c\_out} final.
@@ -32,8 +38,14 @@ A subtração simples de \texttt{a\_in} menos \texttt{b\_in} é realizada, e o \
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{images/alu_0011.png}
+\includegraphics[width=\textwidth]{images/alu_0011_com_carry_in.png}
 \caption{Operação SUBC (\texttt{op\_sel = 0011}): Subtração com carry-in}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/alu_0011_sem_carry_in.png}
+\caption{Operação SUBC (\texttt{op\_sel = 0011}): Subtração sem carry-in}
 \end{figure}
 
 A subtração considera o carry-in como um decrementador adicional, afetando o resultado final e os sinais auxiliares.
@@ -92,16 +104,28 @@ Rotação simples para a direita, levando o LSB para o MSB.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{images/alu_1010.png}
+\includegraphics[width=\textwidth]{images/alu_1010_com_carry_in.png}
 \caption{Operação RLC (\texttt{op\_sel = 1010}): Rotação à esquerda via carry}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/alu_1010_sem_carry_in.png}
+\caption{Operação RLC (\texttt{op\_sel = 1010}): Rotação à esquerda sem carry}
 \end{figure}
 
 Aqui, o bit de carry-in é inserido como LSB, e o MSB de \texttt{a\_in} torna-se o \texttt{c\_out}.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{images/alu_1011.png}
+\includegraphics[width=\textwidth]{images/alu_1011_com_carry_in.png}
 \caption{Operação RRC (\texttt{op\_sel = 1011}): Rotação à direita via carry}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/alu_1011_sem_carry_in.png}
+\caption{Operação RRC (\texttt{op\_sel = 1011}): Rotação à direita sem carry}
 \end{figure}
 
 Similar à RLC, mas rotacionando para a direita. O carry-in ocupa o MSB, e o LSB vira \texttt{c\_out}.

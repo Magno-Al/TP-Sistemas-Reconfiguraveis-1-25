@@ -566,7 +566,7 @@ TRANSITION_LIST("c_in")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 40.0;
+		LEVEL 0 FOR 40.0;
 	}
 }
 
@@ -621,7 +621,7 @@ TRANSITION_LIST("r_out[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 40.0;
+		LEVEL 0 FOR 40.0;
 	}
 }
 
