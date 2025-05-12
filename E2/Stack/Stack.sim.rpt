@@ -1,0 +1,482 @@
+Simulator report for Stack
+Mon May 12 17:27:17 2025
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 200.0 ns     ;
+; Simulation Netlist Size     ; 194 nodes    ;
+; Simulation Coverage         ;      33.51 % ;
+; Total Number of Transitions ; 286          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Stratix II   ;
+; Device                      ; EP2S15F484C3 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      33.51 % ;
+; Total nodes checked                                 ; 194          ;
+; Total output ports checked                          ; 194          ;
+; Total output ports with complete 1/0-value coverage ; 65           ;
+; Total output ports with no 1/0-value coverage       ; 127          ;
+; Total output ports with no 1-value coverage         ; 127          ;
+; Total output ports with no 0-value coverage         ; 129          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                        ;
++--------------------------------+--------------------------------+------------------+
+; Node Name                      ; Output Port Name               ; Output Port Type ;
++--------------------------------+--------------------------------+------------------+
+; |stack|stack_reg[0][0]         ; |stack|stack_reg[0][0]         ; regout           ;
+; |stack|stack_reg[0][1]         ; |stack|stack_reg[0][1]         ; regout           ;
+; |stack|stack_reg[0][3]         ; |stack|stack_reg[0][3]         ; regout           ;
+; |stack|stack_reg[0][4]         ; |stack|stack_reg[0][4]         ; regout           ;
+; |stack|stack_reg[0][7]         ; |stack|stack_reg[0][7]         ; regout           ;
+; |stack|stack_reg[0][8]         ; |stack|stack_reg[0][8]         ; regout           ;
+; |stack|stack_reg[0][9]         ; |stack|stack_reg[0][9]         ; regout           ;
+; |stack|stack_reg[0][10]        ; |stack|stack_reg[0][10]        ; regout           ;
+; |stack|stack_reg[1][0]         ; |stack|stack_reg[1][0]         ; regout           ;
+; |stack|stack_reg[1][3]         ; |stack|stack_reg[1][3]         ; regout           ;
+; |stack|stack_reg[1][4]         ; |stack|stack_reg[1][4]         ; regout           ;
+; |stack|stack_reg[1][7]         ; |stack|stack_reg[1][7]         ; regout           ;
+; |stack|stack_reg[1][8]         ; |stack|stack_reg[1][8]         ; regout           ;
+; |stack|stack_reg[1][9]         ; |stack|stack_reg[1][9]         ; regout           ;
+; |stack|stack_reg[2][0]         ; |stack|stack_reg[2][0]         ; regout           ;
+; |stack|stack_reg[2][3]         ; |stack|stack_reg[2][3]         ; regout           ;
+; |stack|stack_reg[2][7]         ; |stack|stack_reg[2][7]         ; regout           ;
+; |stack|stack_reg[2][8]         ; |stack|stack_reg[2][8]         ; regout           ;
+; |stack|stack_reg[1][0]~0       ; |stack|stack_reg[1][0]~0       ; combout          ;
+; |stack|stack_out[0]            ; |stack|stack_out[0]            ; padio            ;
+; |stack|stack_out[1]            ; |stack|stack_out[1]            ; padio            ;
+; |stack|stack_out[3]            ; |stack|stack_out[3]            ; padio            ;
+; |stack|stack_out[4]            ; |stack|stack_out[4]            ; padio            ;
+; |stack|stack_out[7]            ; |stack|stack_out[7]            ; padio            ;
+; |stack|stack_out[8]            ; |stack|stack_out[8]            ; padio            ;
+; |stack|stack_out[9]            ; |stack|stack_out[9]            ; padio            ;
+; |stack|stack_out[10]           ; |stack|stack_out[10]           ; padio            ;
+; |stack|clk_in                  ; |stack|clk_in~corein           ; combout          ;
+; |stack|stack_in[0]             ; |stack|stack_in[0]~corein      ; combout          ;
+; |stack|stack_push              ; |stack|stack_push~corein       ; combout          ;
+; |stack|stack_pop               ; |stack|stack_pop~corein        ; combout          ;
+; |stack|stack_in[1]             ; |stack|stack_in[1]~corein      ; combout          ;
+; |stack|stack_in[3]             ; |stack|stack_in[3]~corein      ; combout          ;
+; |stack|stack_in[4]             ; |stack|stack_in[4]~corein      ; combout          ;
+; |stack|stack_in[7]             ; |stack|stack_in[7]~corein      ; combout          ;
+; |stack|stack_in[8]             ; |stack|stack_in[8]~corein      ; combout          ;
+; |stack|stack_in[9]             ; |stack|stack_in[9]~corein      ; combout          ;
+; |stack|stack_in[10]            ; |stack|stack_in[10]~corein     ; combout          ;
+; |stack|clk_in~clkctrl          ; |stack|clk_in~clkctrl          ; outclk           ;
+; |stack|stack_reg[1][0]~feeder  ; |stack|stack_reg[1][0]~feeder  ; combout          ;
+; |stack|stack_reg[1][1]~feeder  ; |stack|stack_reg[1][1]~feeder  ; combout          ;
+; |stack|stack_reg[1][3]~feeder  ; |stack|stack_reg[1][3]~feeder  ; combout          ;
+; |stack|stack_reg[1][4]~feeder  ; |stack|stack_reg[1][4]~feeder  ; combout          ;
+; |stack|stack_reg[1][7]~feeder  ; |stack|stack_reg[1][7]~feeder  ; combout          ;
+; |stack|stack_reg[1][8]~feeder  ; |stack|stack_reg[1][8]~feeder  ; combout          ;
+; |stack|stack_reg[1][9]~feeder  ; |stack|stack_reg[1][9]~feeder  ; combout          ;
+; |stack|stack_reg[1][10]~feeder ; |stack|stack_reg[1][10]~feeder ; combout          ;
+; |stack|stack_reg[2][0]~feeder  ; |stack|stack_reg[2][0]~feeder  ; combout          ;
+; |stack|stack_reg[2][3]~feeder  ; |stack|stack_reg[2][3]~feeder  ; combout          ;
+; |stack|stack_reg[2][4]~feeder  ; |stack|stack_reg[2][4]~feeder  ; combout          ;
+; |stack|stack_reg[2][7]~feeder  ; |stack|stack_reg[2][7]~feeder  ; combout          ;
+; |stack|stack_reg[2][8]~feeder  ; |stack|stack_reg[2][8]~feeder  ; combout          ;
+; |stack|stack_reg[2][9]~feeder  ; |stack|stack_reg[2][9]~feeder  ; combout          ;
+; |stack|stack_reg[3][0]~feeder  ; |stack|stack_reg[3][0]~feeder  ; combout          ;
+; |stack|stack_reg[3][3]~feeder  ; |stack|stack_reg[3][3]~feeder  ; combout          ;
+; |stack|stack_reg[3][7]~feeder  ; |stack|stack_reg[3][7]~feeder  ; combout          ;
+; |stack|stack_reg[3][8]~feeder  ; |stack|stack_reg[3][8]~feeder  ; combout          ;
+; |stack|stack_reg[0][0]~feeder  ; |stack|stack_reg[0][0]~feeder  ; combout          ;
+; |stack|stack_reg[0][1]~feeder  ; |stack|stack_reg[0][1]~feeder  ; combout          ;
+; |stack|stack_reg[0][3]~feeder  ; |stack|stack_reg[0][3]~feeder  ; combout          ;
+; |stack|stack_reg[0][4]~feeder  ; |stack|stack_reg[0][4]~feeder  ; combout          ;
+; |stack|stack_reg[0][7]~feeder  ; |stack|stack_reg[0][7]~feeder  ; combout          ;
+; |stack|stack_reg[0][8]~feeder  ; |stack|stack_reg[0][8]~feeder  ; combout          ;
+; |stack|stack_reg[0][9]~feeder  ; |stack|stack_reg[0][9]~feeder  ; combout          ;
+; |stack|stack_reg[0][10]~feeder ; |stack|stack_reg[0][10]~feeder ; combout          ;
++--------------------------------+--------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                           ;
++--------------------------------+--------------------------------+------------------+
+; Node Name                      ; Output Port Name               ; Output Port Type ;
++--------------------------------+--------------------------------+------------------+
+; |stack|stack_reg[0][2]         ; |stack|stack_reg[0][2]         ; regout           ;
+; |stack|stack_reg[0][5]         ; |stack|stack_reg[0][5]         ; regout           ;
+; |stack|stack_reg[0][6]         ; |stack|stack_reg[0][6]         ; regout           ;
+; |stack|stack_reg[1][1]         ; |stack|stack_reg[1][1]         ; regout           ;
+; |stack|stack_reg[1][2]         ; |stack|stack_reg[1][2]         ; regout           ;
+; |stack|stack_reg[1][5]         ; |stack|stack_reg[1][5]         ; regout           ;
+; |stack|stack_reg[1][6]         ; |stack|stack_reg[1][6]         ; regout           ;
+; |stack|stack_reg[1][10]        ; |stack|stack_reg[1][10]        ; regout           ;
+; |stack|stack_reg[2][1]         ; |stack|stack_reg[2][1]         ; regout           ;
+; |stack|stack_reg[2][2]         ; |stack|stack_reg[2][2]         ; regout           ;
+; |stack|stack_reg[2][4]         ; |stack|stack_reg[2][4]         ; regout           ;
+; |stack|stack_reg[2][5]         ; |stack|stack_reg[2][5]         ; regout           ;
+; |stack|stack_reg[2][6]         ; |stack|stack_reg[2][6]         ; regout           ;
+; |stack|stack_reg[2][9]         ; |stack|stack_reg[2][9]         ; regout           ;
+; |stack|stack_reg[2][10]        ; |stack|stack_reg[2][10]        ; regout           ;
+; |stack|stack_reg[3][0]         ; |stack|stack_reg[3][0]         ; regout           ;
+; |stack|stack_reg[3][1]         ; |stack|stack_reg[3][1]         ; regout           ;
+; |stack|stack_reg[3][2]         ; |stack|stack_reg[3][2]         ; regout           ;
+; |stack|stack_reg[3][3]         ; |stack|stack_reg[3][3]         ; regout           ;
+; |stack|stack_reg[3][4]         ; |stack|stack_reg[3][4]         ; regout           ;
+; |stack|stack_reg[3][5]         ; |stack|stack_reg[3][5]         ; regout           ;
+; |stack|stack_reg[3][6]         ; |stack|stack_reg[3][6]         ; regout           ;
+; |stack|stack_reg[3][7]         ; |stack|stack_reg[3][7]         ; regout           ;
+; |stack|stack_reg[3][8]         ; |stack|stack_reg[3][8]         ; regout           ;
+; |stack|stack_reg[3][9]         ; |stack|stack_reg[3][9]         ; regout           ;
+; |stack|stack_reg[3][10]        ; |stack|stack_reg[3][10]        ; regout           ;
+; |stack|stack_reg[4][0]         ; |stack|stack_reg[4][0]         ; regout           ;
+; |stack|stack_reg[4][1]         ; |stack|stack_reg[4][1]         ; regout           ;
+; |stack|stack_reg[4][2]         ; |stack|stack_reg[4][2]         ; regout           ;
+; |stack|stack_reg[4][3]         ; |stack|stack_reg[4][3]         ; regout           ;
+; |stack|stack_reg[4][4]         ; |stack|stack_reg[4][4]         ; regout           ;
+; |stack|stack_reg[4][5]         ; |stack|stack_reg[4][5]         ; regout           ;
+; |stack|stack_reg[4][6]         ; |stack|stack_reg[4][6]         ; regout           ;
+; |stack|stack_reg[4][7]         ; |stack|stack_reg[4][7]         ; regout           ;
+; |stack|stack_reg[4][8]         ; |stack|stack_reg[4][8]         ; regout           ;
+; |stack|stack_reg[4][9]         ; |stack|stack_reg[4][9]         ; regout           ;
+; |stack|stack_reg[4][10]        ; |stack|stack_reg[4][10]        ; regout           ;
+; |stack|stack_reg[5][0]         ; |stack|stack_reg[5][0]         ; regout           ;
+; |stack|stack_reg[5][1]         ; |stack|stack_reg[5][1]         ; regout           ;
+; |stack|stack_reg[5][2]         ; |stack|stack_reg[5][2]         ; regout           ;
+; |stack|stack_reg[5][3]         ; |stack|stack_reg[5][3]         ; regout           ;
+; |stack|stack_reg[5][4]         ; |stack|stack_reg[5][4]         ; regout           ;
+; |stack|stack_reg[5][5]         ; |stack|stack_reg[5][5]         ; regout           ;
+; |stack|stack_reg[5][6]         ; |stack|stack_reg[5][6]         ; regout           ;
+; |stack|stack_reg[5][7]         ; |stack|stack_reg[5][7]         ; regout           ;
+; |stack|stack_reg[5][8]         ; |stack|stack_reg[5][8]         ; regout           ;
+; |stack|stack_reg[5][9]         ; |stack|stack_reg[5][9]         ; regout           ;
+; |stack|stack_reg[5][10]        ; |stack|stack_reg[5][10]        ; regout           ;
+; |stack|stack_reg[6][0]         ; |stack|stack_reg[6][0]         ; regout           ;
+; |stack|stack_reg[6][1]         ; |stack|stack_reg[6][1]         ; regout           ;
+; |stack|stack_reg[6][2]         ; |stack|stack_reg[6][2]         ; regout           ;
+; |stack|stack_reg[6][3]         ; |stack|stack_reg[6][3]         ; regout           ;
+; |stack|stack_reg[6][4]         ; |stack|stack_reg[6][4]         ; regout           ;
+; |stack|stack_reg[6][5]         ; |stack|stack_reg[6][5]         ; regout           ;
+; |stack|stack_reg[6][6]         ; |stack|stack_reg[6][6]         ; regout           ;
+; |stack|stack_reg[6][7]         ; |stack|stack_reg[6][7]         ; regout           ;
+; |stack|stack_reg[6][8]         ; |stack|stack_reg[6][8]         ; regout           ;
+; |stack|stack_reg[6][9]         ; |stack|stack_reg[6][9]         ; regout           ;
+; |stack|stack_reg[6][10]        ; |stack|stack_reg[6][10]        ; regout           ;
+; |stack|stack_reg[7][0]         ; |stack|stack_reg[7][0]         ; regout           ;
+; |stack|stack_reg[7][1]         ; |stack|stack_reg[7][1]         ; regout           ;
+; |stack|stack_reg[7][2]         ; |stack|stack_reg[7][2]         ; regout           ;
+; |stack|stack_reg[7][3]         ; |stack|stack_reg[7][3]         ; regout           ;
+; |stack|stack_reg[7][4]         ; |stack|stack_reg[7][4]         ; regout           ;
+; |stack|stack_reg[7][5]         ; |stack|stack_reg[7][5]         ; regout           ;
+; |stack|stack_reg[7][6]         ; |stack|stack_reg[7][6]         ; regout           ;
+; |stack|stack_reg[7][7]         ; |stack|stack_reg[7][7]         ; regout           ;
+; |stack|stack_reg[7][8]         ; |stack|stack_reg[7][8]         ; regout           ;
+; |stack|stack_reg[7][9]         ; |stack|stack_reg[7][9]         ; regout           ;
+; |stack|stack_reg[7][10]        ; |stack|stack_reg[7][10]        ; regout           ;
+; |stack|stack_out[2]            ; |stack|stack_out[2]            ; padio            ;
+; |stack|stack_out[5]            ; |stack|stack_out[5]            ; padio            ;
+; |stack|stack_out[6]            ; |stack|stack_out[6]            ; padio            ;
+; |stack|stack_in[2]             ; |stack|stack_in[2]~corein      ; combout          ;
+; |stack|stack_in[5]             ; |stack|stack_in[5]~corein      ; combout          ;
+; |stack|stack_in[6]             ; |stack|stack_in[6]~corein      ; combout          ;
+; |stack|stack_reg[1][2]~feeder  ; |stack|stack_reg[1][2]~feeder  ; combout          ;
+; |stack|stack_reg[1][5]~feeder  ; |stack|stack_reg[1][5]~feeder  ; combout          ;
+; |stack|stack_reg[1][6]~feeder  ; |stack|stack_reg[1][6]~feeder  ; combout          ;
+; |stack|stack_reg[2][1]~feeder  ; |stack|stack_reg[2][1]~feeder  ; combout          ;
+; |stack|stack_reg[2][2]~feeder  ; |stack|stack_reg[2][2]~feeder  ; combout          ;
+; |stack|stack_reg[2][5]~feeder  ; |stack|stack_reg[2][5]~feeder  ; combout          ;
+; |stack|stack_reg[2][6]~feeder  ; |stack|stack_reg[2][6]~feeder  ; combout          ;
+; |stack|stack_reg[2][10]~feeder ; |stack|stack_reg[2][10]~feeder ; combout          ;
+; |stack|stack_reg[3][1]~feeder  ; |stack|stack_reg[3][1]~feeder  ; combout          ;
+; |stack|stack_reg[3][2]~feeder  ; |stack|stack_reg[3][2]~feeder  ; combout          ;
+; |stack|stack_reg[3][4]~feeder  ; |stack|stack_reg[3][4]~feeder  ; combout          ;
+; |stack|stack_reg[3][5]~feeder  ; |stack|stack_reg[3][5]~feeder  ; combout          ;
+; |stack|stack_reg[3][6]~feeder  ; |stack|stack_reg[3][6]~feeder  ; combout          ;
+; |stack|stack_reg[3][9]~feeder  ; |stack|stack_reg[3][9]~feeder  ; combout          ;
+; |stack|stack_reg[3][10]~feeder ; |stack|stack_reg[3][10]~feeder ; combout          ;
+; |stack|stack_reg[4][0]~feeder  ; |stack|stack_reg[4][0]~feeder  ; combout          ;
+; |stack|stack_reg[4][1]~feeder  ; |stack|stack_reg[4][1]~feeder  ; combout          ;
+; |stack|stack_reg[4][2]~feeder  ; |stack|stack_reg[4][2]~feeder  ; combout          ;
+; |stack|stack_reg[4][3]~feeder  ; |stack|stack_reg[4][3]~feeder  ; combout          ;
+; |stack|stack_reg[4][4]~feeder  ; |stack|stack_reg[4][4]~feeder  ; combout          ;
+; |stack|stack_reg[4][5]~feeder  ; |stack|stack_reg[4][5]~feeder  ; combout          ;
+; |stack|stack_reg[4][6]~feeder  ; |stack|stack_reg[4][6]~feeder  ; combout          ;
+; |stack|stack_reg[4][7]~feeder  ; |stack|stack_reg[4][7]~feeder  ; combout          ;
+; |stack|stack_reg[4][8]~feeder  ; |stack|stack_reg[4][8]~feeder  ; combout          ;
+; |stack|stack_reg[4][9]~feeder  ; |stack|stack_reg[4][9]~feeder  ; combout          ;
+; |stack|stack_reg[4][10]~feeder ; |stack|stack_reg[4][10]~feeder ; combout          ;
+; |stack|stack_reg[5][0]~feeder  ; |stack|stack_reg[5][0]~feeder  ; combout          ;
+; |stack|stack_reg[5][1]~feeder  ; |stack|stack_reg[5][1]~feeder  ; combout          ;
+; |stack|stack_reg[5][2]~feeder  ; |stack|stack_reg[5][2]~feeder  ; combout          ;
+; |stack|stack_reg[5][3]~feeder  ; |stack|stack_reg[5][3]~feeder  ; combout          ;
+; |stack|stack_reg[5][4]~feeder  ; |stack|stack_reg[5][4]~feeder  ; combout          ;
+; |stack|stack_reg[5][5]~feeder  ; |stack|stack_reg[5][5]~feeder  ; combout          ;
+; |stack|stack_reg[5][6]~feeder  ; |stack|stack_reg[5][6]~feeder  ; combout          ;
+; |stack|stack_reg[5][7]~feeder  ; |stack|stack_reg[5][7]~feeder  ; combout          ;
+; |stack|stack_reg[5][8]~feeder  ; |stack|stack_reg[5][8]~feeder  ; combout          ;
+; |stack|stack_reg[5][9]~feeder  ; |stack|stack_reg[5][9]~feeder  ; combout          ;
+; |stack|stack_reg[5][10]~feeder ; |stack|stack_reg[5][10]~feeder ; combout          ;
+; |stack|stack_reg[6][0]~feeder  ; |stack|stack_reg[6][0]~feeder  ; combout          ;
+; |stack|stack_reg[6][1]~feeder  ; |stack|stack_reg[6][1]~feeder  ; combout          ;
+; |stack|stack_reg[6][2]~feeder  ; |stack|stack_reg[6][2]~feeder  ; combout          ;
+; |stack|stack_reg[6][3]~feeder  ; |stack|stack_reg[6][3]~feeder  ; combout          ;
+; |stack|stack_reg[6][4]~feeder  ; |stack|stack_reg[6][4]~feeder  ; combout          ;
+; |stack|stack_reg[6][5]~feeder  ; |stack|stack_reg[6][5]~feeder  ; combout          ;
+; |stack|stack_reg[6][6]~feeder  ; |stack|stack_reg[6][6]~feeder  ; combout          ;
+; |stack|stack_reg[6][7]~feeder  ; |stack|stack_reg[6][7]~feeder  ; combout          ;
+; |stack|stack_reg[6][8]~feeder  ; |stack|stack_reg[6][8]~feeder  ; combout          ;
+; |stack|stack_reg[6][9]~feeder  ; |stack|stack_reg[6][9]~feeder  ; combout          ;
+; |stack|stack_reg[6][10]~feeder ; |stack|stack_reg[6][10]~feeder ; combout          ;
+; |stack|stack_reg[0][2]~feeder  ; |stack|stack_reg[0][2]~feeder  ; combout          ;
+; |stack|stack_reg[0][5]~feeder  ; |stack|stack_reg[0][5]~feeder  ; combout          ;
+; |stack|stack_reg[0][6]~feeder  ; |stack|stack_reg[0][6]~feeder  ; combout          ;
++--------------------------------+--------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                           ;
++--------------------------------+--------------------------------+------------------+
+; Node Name                      ; Output Port Name               ; Output Port Type ;
++--------------------------------+--------------------------------+------------------+
+; |stack|stack_reg[0][2]         ; |stack|stack_reg[0][2]         ; regout           ;
+; |stack|stack_reg[0][5]         ; |stack|stack_reg[0][5]         ; regout           ;
+; |stack|stack_reg[0][6]         ; |stack|stack_reg[0][6]         ; regout           ;
+; |stack|stack_reg[1][1]         ; |stack|stack_reg[1][1]         ; regout           ;
+; |stack|stack_reg[1][2]         ; |stack|stack_reg[1][2]         ; regout           ;
+; |stack|stack_reg[1][5]         ; |stack|stack_reg[1][5]         ; regout           ;
+; |stack|stack_reg[1][6]         ; |stack|stack_reg[1][6]         ; regout           ;
+; |stack|stack_reg[1][10]        ; |stack|stack_reg[1][10]        ; regout           ;
+; |stack|stack_reg[2][1]         ; |stack|stack_reg[2][1]         ; regout           ;
+; |stack|stack_reg[2][2]         ; |stack|stack_reg[2][2]         ; regout           ;
+; |stack|stack_reg[2][4]         ; |stack|stack_reg[2][4]         ; regout           ;
+; |stack|stack_reg[2][5]         ; |stack|stack_reg[2][5]         ; regout           ;
+; |stack|stack_reg[2][6]         ; |stack|stack_reg[2][6]         ; regout           ;
+; |stack|stack_reg[2][9]         ; |stack|stack_reg[2][9]         ; regout           ;
+; |stack|stack_reg[2][10]        ; |stack|stack_reg[2][10]        ; regout           ;
+; |stack|stack_reg[3][0]         ; |stack|stack_reg[3][0]         ; regout           ;
+; |stack|stack_reg[3][1]         ; |stack|stack_reg[3][1]         ; regout           ;
+; |stack|stack_reg[3][2]         ; |stack|stack_reg[3][2]         ; regout           ;
+; |stack|stack_reg[3][3]         ; |stack|stack_reg[3][3]         ; regout           ;
+; |stack|stack_reg[3][4]         ; |stack|stack_reg[3][4]         ; regout           ;
+; |stack|stack_reg[3][5]         ; |stack|stack_reg[3][5]         ; regout           ;
+; |stack|stack_reg[3][6]         ; |stack|stack_reg[3][6]         ; regout           ;
+; |stack|stack_reg[3][7]         ; |stack|stack_reg[3][7]         ; regout           ;
+; |stack|stack_reg[3][8]         ; |stack|stack_reg[3][8]         ; regout           ;
+; |stack|stack_reg[3][9]         ; |stack|stack_reg[3][9]         ; regout           ;
+; |stack|stack_reg[3][10]        ; |stack|stack_reg[3][10]        ; regout           ;
+; |stack|stack_reg[4][0]         ; |stack|stack_reg[4][0]         ; regout           ;
+; |stack|stack_reg[4][1]         ; |stack|stack_reg[4][1]         ; regout           ;
+; |stack|stack_reg[4][2]         ; |stack|stack_reg[4][2]         ; regout           ;
+; |stack|stack_reg[4][3]         ; |stack|stack_reg[4][3]         ; regout           ;
+; |stack|stack_reg[4][4]         ; |stack|stack_reg[4][4]         ; regout           ;
+; |stack|stack_reg[4][5]         ; |stack|stack_reg[4][5]         ; regout           ;
+; |stack|stack_reg[4][6]         ; |stack|stack_reg[4][6]         ; regout           ;
+; |stack|stack_reg[4][7]         ; |stack|stack_reg[4][7]         ; regout           ;
+; |stack|stack_reg[4][8]         ; |stack|stack_reg[4][8]         ; regout           ;
+; |stack|stack_reg[4][9]         ; |stack|stack_reg[4][9]         ; regout           ;
+; |stack|stack_reg[4][10]        ; |stack|stack_reg[4][10]        ; regout           ;
+; |stack|stack_reg[5][0]         ; |stack|stack_reg[5][0]         ; regout           ;
+; |stack|stack_reg[5][1]         ; |stack|stack_reg[5][1]         ; regout           ;
+; |stack|stack_reg[5][2]         ; |stack|stack_reg[5][2]         ; regout           ;
+; |stack|stack_reg[5][3]         ; |stack|stack_reg[5][3]         ; regout           ;
+; |stack|stack_reg[5][4]         ; |stack|stack_reg[5][4]         ; regout           ;
+; |stack|stack_reg[5][5]         ; |stack|stack_reg[5][5]         ; regout           ;
+; |stack|stack_reg[5][6]         ; |stack|stack_reg[5][6]         ; regout           ;
+; |stack|stack_reg[5][7]         ; |stack|stack_reg[5][7]         ; regout           ;
+; |stack|stack_reg[5][8]         ; |stack|stack_reg[5][8]         ; regout           ;
+; |stack|stack_reg[5][9]         ; |stack|stack_reg[5][9]         ; regout           ;
+; |stack|stack_reg[5][10]        ; |stack|stack_reg[5][10]        ; regout           ;
+; |stack|stack_reg[6][0]         ; |stack|stack_reg[6][0]         ; regout           ;
+; |stack|stack_reg[6][1]         ; |stack|stack_reg[6][1]         ; regout           ;
+; |stack|stack_reg[6][2]         ; |stack|stack_reg[6][2]         ; regout           ;
+; |stack|stack_reg[6][3]         ; |stack|stack_reg[6][3]         ; regout           ;
+; |stack|stack_reg[6][4]         ; |stack|stack_reg[6][4]         ; regout           ;
+; |stack|stack_reg[6][5]         ; |stack|stack_reg[6][5]         ; regout           ;
+; |stack|stack_reg[6][6]         ; |stack|stack_reg[6][6]         ; regout           ;
+; |stack|stack_reg[6][7]         ; |stack|stack_reg[6][7]         ; regout           ;
+; |stack|stack_reg[6][8]         ; |stack|stack_reg[6][8]         ; regout           ;
+; |stack|stack_reg[6][9]         ; |stack|stack_reg[6][9]         ; regout           ;
+; |stack|stack_reg[6][10]        ; |stack|stack_reg[6][10]        ; regout           ;
+; |stack|stack_reg[7][0]         ; |stack|stack_reg[7][0]         ; regout           ;
+; |stack|stack_reg[7][1]         ; |stack|stack_reg[7][1]         ; regout           ;
+; |stack|stack_reg[7][2]         ; |stack|stack_reg[7][2]         ; regout           ;
+; |stack|stack_reg[7][3]         ; |stack|stack_reg[7][3]         ; regout           ;
+; |stack|stack_reg[7][4]         ; |stack|stack_reg[7][4]         ; regout           ;
+; |stack|stack_reg[7][5]         ; |stack|stack_reg[7][5]         ; regout           ;
+; |stack|stack_reg[7][6]         ; |stack|stack_reg[7][6]         ; regout           ;
+; |stack|stack_reg[7][7]         ; |stack|stack_reg[7][7]         ; regout           ;
+; |stack|stack_reg[7][8]         ; |stack|stack_reg[7][8]         ; regout           ;
+; |stack|stack_reg[7][9]         ; |stack|stack_reg[7][9]         ; regout           ;
+; |stack|stack_reg[7][10]        ; |stack|stack_reg[7][10]        ; regout           ;
+; |stack|stack_out[2]            ; |stack|stack_out[2]            ; padio            ;
+; |stack|stack_out[5]            ; |stack|stack_out[5]            ; padio            ;
+; |stack|stack_out[6]            ; |stack|stack_out[6]            ; padio            ;
+; |stack|nrst                    ; |stack|nrst~corein             ; combout          ;
+; |stack|stack_in[2]             ; |stack|stack_in[2]~corein      ; combout          ;
+; |stack|stack_in[5]             ; |stack|stack_in[5]~corein      ; combout          ;
+; |stack|stack_in[6]             ; |stack|stack_in[6]~corein      ; combout          ;
+; |stack|nrst~clkctrl            ; |stack|nrst~clkctrl            ; outclk           ;
+; |stack|stack_reg[1][2]~feeder  ; |stack|stack_reg[1][2]~feeder  ; combout          ;
+; |stack|stack_reg[1][5]~feeder  ; |stack|stack_reg[1][5]~feeder  ; combout          ;
+; |stack|stack_reg[1][6]~feeder  ; |stack|stack_reg[1][6]~feeder  ; combout          ;
+; |stack|stack_reg[2][1]~feeder  ; |stack|stack_reg[2][1]~feeder  ; combout          ;
+; |stack|stack_reg[2][2]~feeder  ; |stack|stack_reg[2][2]~feeder  ; combout          ;
+; |stack|stack_reg[2][5]~feeder  ; |stack|stack_reg[2][5]~feeder  ; combout          ;
+; |stack|stack_reg[2][6]~feeder  ; |stack|stack_reg[2][6]~feeder  ; combout          ;
+; |stack|stack_reg[2][10]~feeder ; |stack|stack_reg[2][10]~feeder ; combout          ;
+; |stack|stack_reg[3][1]~feeder  ; |stack|stack_reg[3][1]~feeder  ; combout          ;
+; |stack|stack_reg[3][2]~feeder  ; |stack|stack_reg[3][2]~feeder  ; combout          ;
+; |stack|stack_reg[3][4]~feeder  ; |stack|stack_reg[3][4]~feeder  ; combout          ;
+; |stack|stack_reg[3][5]~feeder  ; |stack|stack_reg[3][5]~feeder  ; combout          ;
+; |stack|stack_reg[3][6]~feeder  ; |stack|stack_reg[3][6]~feeder  ; combout          ;
+; |stack|stack_reg[3][9]~feeder  ; |stack|stack_reg[3][9]~feeder  ; combout          ;
+; |stack|stack_reg[3][10]~feeder ; |stack|stack_reg[3][10]~feeder ; combout          ;
+; |stack|stack_reg[4][0]~feeder  ; |stack|stack_reg[4][0]~feeder  ; combout          ;
+; |stack|stack_reg[4][1]~feeder  ; |stack|stack_reg[4][1]~feeder  ; combout          ;
+; |stack|stack_reg[4][2]~feeder  ; |stack|stack_reg[4][2]~feeder  ; combout          ;
+; |stack|stack_reg[4][3]~feeder  ; |stack|stack_reg[4][3]~feeder  ; combout          ;
+; |stack|stack_reg[4][4]~feeder  ; |stack|stack_reg[4][4]~feeder  ; combout          ;
+; |stack|stack_reg[4][5]~feeder  ; |stack|stack_reg[4][5]~feeder  ; combout          ;
+; |stack|stack_reg[4][6]~feeder  ; |stack|stack_reg[4][6]~feeder  ; combout          ;
+; |stack|stack_reg[4][7]~feeder  ; |stack|stack_reg[4][7]~feeder  ; combout          ;
+; |stack|stack_reg[4][8]~feeder  ; |stack|stack_reg[4][8]~feeder  ; combout          ;
+; |stack|stack_reg[4][9]~feeder  ; |stack|stack_reg[4][9]~feeder  ; combout          ;
+; |stack|stack_reg[4][10]~feeder ; |stack|stack_reg[4][10]~feeder ; combout          ;
+; |stack|stack_reg[5][0]~feeder  ; |stack|stack_reg[5][0]~feeder  ; combout          ;
+; |stack|stack_reg[5][1]~feeder  ; |stack|stack_reg[5][1]~feeder  ; combout          ;
+; |stack|stack_reg[5][2]~feeder  ; |stack|stack_reg[5][2]~feeder  ; combout          ;
+; |stack|stack_reg[5][3]~feeder  ; |stack|stack_reg[5][3]~feeder  ; combout          ;
+; |stack|stack_reg[5][4]~feeder  ; |stack|stack_reg[5][4]~feeder  ; combout          ;
+; |stack|stack_reg[5][5]~feeder  ; |stack|stack_reg[5][5]~feeder  ; combout          ;
+; |stack|stack_reg[5][6]~feeder  ; |stack|stack_reg[5][6]~feeder  ; combout          ;
+; |stack|stack_reg[5][7]~feeder  ; |stack|stack_reg[5][7]~feeder  ; combout          ;
+; |stack|stack_reg[5][8]~feeder  ; |stack|stack_reg[5][8]~feeder  ; combout          ;
+; |stack|stack_reg[5][9]~feeder  ; |stack|stack_reg[5][9]~feeder  ; combout          ;
+; |stack|stack_reg[5][10]~feeder ; |stack|stack_reg[5][10]~feeder ; combout          ;
+; |stack|stack_reg[6][0]~feeder  ; |stack|stack_reg[6][0]~feeder  ; combout          ;
+; |stack|stack_reg[6][1]~feeder  ; |stack|stack_reg[6][1]~feeder  ; combout          ;
+; |stack|stack_reg[6][2]~feeder  ; |stack|stack_reg[6][2]~feeder  ; combout          ;
+; |stack|stack_reg[6][3]~feeder  ; |stack|stack_reg[6][3]~feeder  ; combout          ;
+; |stack|stack_reg[6][4]~feeder  ; |stack|stack_reg[6][4]~feeder  ; combout          ;
+; |stack|stack_reg[6][5]~feeder  ; |stack|stack_reg[6][5]~feeder  ; combout          ;
+; |stack|stack_reg[6][6]~feeder  ; |stack|stack_reg[6][6]~feeder  ; combout          ;
+; |stack|stack_reg[6][7]~feeder  ; |stack|stack_reg[6][7]~feeder  ; combout          ;
+; |stack|stack_reg[6][8]~feeder  ; |stack|stack_reg[6][8]~feeder  ; combout          ;
+; |stack|stack_reg[6][9]~feeder  ; |stack|stack_reg[6][9]~feeder  ; combout          ;
+; |stack|stack_reg[6][10]~feeder ; |stack|stack_reg[6][10]~feeder ; combout          ;
+; |stack|stack_reg[0][2]~feeder  ; |stack|stack_reg[0][2]~feeder  ; combout          ;
+; |stack|stack_reg[0][5]~feeder  ; |stack|stack_reg[0][5]~feeder  ; combout          ;
+; |stack|stack_reg[0][6]~feeder  ; |stack|stack_reg[0][6]~feeder  ; combout          ;
++--------------------------------+--------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Mon May 12 17:27:17 2025
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off Stack -c Stack
+Info: Using vector source file "C:/Users/ammag/OneDrive/Área de Trabalho/Puc/07_Sistemas_Rec/Tp2/Stack/Stack.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      33.51 %
+Info: Number of transitions in simulation is 286
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 152 megabytes
+    Info: Processing ended: Mon May 12 17:27:17 2025
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+
