@@ -1,5 +1,5 @@
 Assembler report for Port_io
-Mon Jun 02 22:48:52 2025
+Tue Jun 03 02:35:09 2025
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -10,8 +10,8 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/ammag/OneDrive/햞ea de Trabalho/Puc/07_Sistemas_Rec/Tp3/Port_io.sof
-  6. Assembler Device Options: C:/Users/ammag/OneDrive/햞ea de Trabalho/Puc/07_Sistemas_Rec/Tp3/Port_io.pof
+  5. Assembler Device Options: C:/Users/ammag/OneDrive/햞ea de Trabalho/Puc/07_Sistemas_Rec/E3/Port_io/Port_io.sof
+  6. Assembler Device Options: C:/Users/ammag/OneDrive/햞ea de Trabalho/Puc/07_Sistemas_Rec/E3/Port_io/Port_io.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Jun 02 22:48:52 2025 ;
+; Assembler Status      ; Successful - Tue Jun 03 02:35:09 2025 ;
 ; Revision Name         ; Port_io                               ;
 ; Top-level Entity Name ; port_io                               ;
 ; Family                ; Stratix II                            ;
@@ -79,37 +79,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+------------------------------------------------------------------------------+
-; Assembler Generated Files                                                    ;
-+------------------------------------------------------------------------------+
-; File Name                                                                    ;
-+------------------------------------------------------------------------------+
-; C:/Users/ammag/OneDrive/햞ea de Trabalho/Puc/07_Sistemas_Rec/Tp3/Port_io.sof ;
-; C:/Users/ammag/OneDrive/햞ea de Trabalho/Puc/07_Sistemas_Rec/Tp3/Port_io.pof ;
-+------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                           ;
++-------------------------------------------------------------------------------------+
+; File Name                                                                           ;
++-------------------------------------------------------------------------------------+
+; C:/Users/ammag/OneDrive/햞ea de Trabalho/Puc/07_Sistemas_Rec/E3/Port_io/Port_io.sof ;
+; C:/Users/ammag/OneDrive/햞ea de Trabalho/Puc/07_Sistemas_Rec/E3/Port_io/Port_io.pof ;
++-------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/ammag/OneDrive/햞ea de Trabalho/Puc/07_Sistemas_Rec/Tp3/Port_io.sof ;
-+----------------+---------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                               ;
-+----------------+---------------------------------------------------------------------------------------+
-; Device         ; EP2S15F484C3                                                                          ;
-; JTAG usercode  ; 0xFFFFFFFF                                                                            ;
-; Checksum       ; 0x0027E222                                                                            ;
-+----------------+---------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/ammag/OneDrive/햞ea de Trabalho/Puc/07_Sistemas_Rec/E3/Port_io/Port_io.sof ;
++----------------+----------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                      ;
++----------------+----------------------------------------------------------------------------------------------+
+; Device         ; EP2S15F484C3                                                                                 ;
+; JTAG usercode  ; 0xFFFFFFFF                                                                                   ;
+; Checksum       ; 0x0027E7A5                                                                                   ;
++----------------+----------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/ammag/OneDrive/햞ea de Trabalho/Puc/07_Sistemas_Rec/Tp3/Port_io.pof ;
-+--------------------+-----------------------------------------------------------------------------------+
-; Option             ; Setting                                                                           ;
-+--------------------+-----------------------------------------------------------------------------------+
-; Device             ; EPC16                                                                             ;
-; JTAG usercode      ; 0xFFFFFFFF                                                                        ;
-; Checksum           ; 0x1EF4AE3E                                                                        ;
-; Compression Ratio  ; 3                                                                                 ;
-+--------------------+-----------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/ammag/OneDrive/햞ea de Trabalho/Puc/07_Sistemas_Rec/E3/Port_io/Port_io.pof ;
++--------------------+------------------------------------------------------------------------------------------+
+; Option             ; Setting                                                                                  ;
++--------------------+------------------------------------------------------------------------------------------+
+; Device             ; EPC16                                                                                    ;
+; JTAG usercode      ; 0xFFFFFFFF                                                                               ;
+; Checksum           ; 0x1EF3F3AD                                                                               ;
+; Compression Ratio  ; 3                                                                                        ;
++--------------------+------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -118,13 +118,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Mon Jun 02 22:48:51 2025
+    Info: Processing started: Tue Jun 03 02:35:08 2025
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Port_io -c Port_io
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 233 megabytes
-    Info: Processing ended: Mon Jun 02 22:48:52 2025
+    Info: Processing ended: Tue Jun 03 02:35:09 2025
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

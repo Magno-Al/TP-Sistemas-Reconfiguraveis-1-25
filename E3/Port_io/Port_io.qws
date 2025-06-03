@@ -9,13 +9,14 @@ ptn_Child3=Document-2
 ptn_Child4=Document-3
 ptn_Child5=Document-4
 ptn_Child6=Document-5
+ptn_Child7=Document-6
 [ProjectWorkspace.Frames.ChildFrames.Document-0]
 ptn_Child1=ViewFrame-0
 [ProjectWorkspace.Frames.ChildFrames.Document-0.ViewFrame-0]
 DocPathName=Port_io.vhd
 DocumentCLSID={ca385d57-a4c7-11d1-a098-0020affa43f2}
 IsChildFrameDetached=False
-IsActiveChildFrame=True
+IsActiveChildFrame=False
 ptn_Child1=StateMap
 [ProjectWorkspace.Frames.ChildFrames.Document-0.ViewFrame-0.StateMap]
 AFC_IN_REPORT=False
@@ -25,9 +26,9 @@ ptn_Child1=ViewFrame-0
 DocPathName=Port_io.vwf
 DocumentCLSID={4a9ed22a-e60b-11d1-a0bd-0020affa43f2}
 IsChildFrameDetached=False
-IsActiveChildFrame=False
+IsActiveChildFrame=True
 ptn_Child1=StateMap
 [ProjectWorkspace.Frames.ChildFrames.Document-3.ViewFrame-0.StateMap]
 AFC_SIM_AP_NAME=Port_io
-AFC_PROJ_DB_PATH=C:/Users/ammag/OneDrive/Área de Trabalho/Puc/07_Sistemas_Rec/Tp3/db/Port_io.quartus_db
+AFC_PROJ_DB_PATH=C:/Users/ammag/OneDrive/Área de Trabalho/Puc/07_Sistemas_Rec/E3/Port_io/db/Port_io.quartus_db
 AFC_IN_REPORT=False

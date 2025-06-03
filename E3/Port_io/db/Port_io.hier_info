@@ -67,21 +67,5 @@ port_io[4] <> port_io[4]
 port_io[5] <> port_io[5]
 port_io[6] <> port_io[6]
 port_io[7] <> port_io[7]
-dir_reg_out[0] <= dir_reg[0].DB_MAX_OUTPUT_PORT_TYPE
-dir_reg_out[1] <= dir_reg[1].DB_MAX_OUTPUT_PORT_TYPE
-dir_reg_out[2] <= dir_reg[2].DB_MAX_OUTPUT_PORT_TYPE
-dir_reg_out[3] <= dir_reg[3].DB_MAX_OUTPUT_PORT_TYPE
-dir_reg_out[4] <= dir_reg[4].DB_MAX_OUTPUT_PORT_TYPE
-dir_reg_out[5] <= dir_reg[5].DB_MAX_OUTPUT_PORT_TYPE
-dir_reg_out[6] <= dir_reg[6].DB_MAX_OUTPUT_PORT_TYPE
-dir_reg_out[7] <= dir_reg[7].DB_MAX_OUTPUT_PORT_TYPE
-port_reg_out[0] <= port_reg[0].DB_MAX_OUTPUT_PORT_TYPE
-port_reg_out[1] <= port_reg[1].DB_MAX_OUTPUT_PORT_TYPE
-port_reg_out[2] <= port_reg[2].DB_MAX_OUTPUT_PORT_TYPE
-port_reg_out[3] <= port_reg[3].DB_MAX_OUTPUT_PORT_TYPE
-port_reg_out[4] <= port_reg[4].DB_MAX_OUTPUT_PORT_TYPE
-port_reg_out[5] <= port_reg[5].DB_MAX_OUTPUT_PORT_TYPE
-port_reg_out[6] <= port_reg[6].DB_MAX_OUTPUT_PORT_TYPE
-port_reg_out[7] <= port_reg[7].DB_MAX_OUTPUT_PORT_TYPE
 
 

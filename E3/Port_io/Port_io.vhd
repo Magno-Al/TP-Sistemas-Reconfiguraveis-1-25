@@ -13,10 +13,7 @@ entity port_io is
     dbus      : inout std_logic_vector(7 downto 0);
     wr_en     : in  std_logic;
     rd_en     : in  std_logic;
-    port_io   : inout std_logic_vector(7 downto 0);
-    
-    dir_reg_out : out std_logic_vector(7 downto 0);
-    port_reg_out : out std_logic_vector(7 downto 0)
+    port_io   : inout std_logic_vector(7 downto 0)
   );
 end port_io;
 
@@ -25,27 +22,22 @@ architecture Behavioral of port_io is
   signal port_reg : std_logic_vector(7 downto 0) := (others => '0');
   signal latch    : std_logic_vector(7 downto 0) := (others => '0');
 begin
-  dir_reg_out <= dir_reg;
-  port_reg_out <= port_reg;
 
-  -- Processamento síncrono
   process(clk_in, nrst)
   begin
     if nrst = '0' then
       dir_reg  <= (others => '0');
       port_reg <= (others => '0');
     elsif rising_edge(clk_in) then
-      -- Escrita no port_reg
       if wr_en = '1' and abus = base_addr then
         port_reg <= dbus;
-      -- Escrita no dir_reg
       elsif wr_en = '1' and abus = std_logic_vector(unsigned(base_addr) + 1) then
         dir_reg <= dbus;
       end if;
     end if;
   end process;
 
-  -- Latch para entrada da porta
+  -- latch
   process(port_io, dir_reg)
   begin
     for i in 0 to 7 loop
@@ -57,12 +49,12 @@ begin
     end loop;
   end process;
 
-  -- Controle da porta bidirecional
+  -- controle da porta
   gen_port : for i in 0 to 7 generate
     port_io(i) <= port_reg(i) when dir_reg(i) = '1' else 'Z';
   end generate;
 
-  -- Leitura via dbus
+  -- leitura via dbus
   dbus <= latch when (rd_en = '1' and abus = base_addr) else
           dir_reg when (rd_en = '1' and abus = std_logic_vector(unsigned(base_addr) + 1)) else
           (others => 'Z');

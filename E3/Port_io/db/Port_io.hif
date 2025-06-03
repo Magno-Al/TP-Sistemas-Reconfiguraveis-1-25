@@ -31,7 +31,7 @@ ON
 # case_insensitive
 # source_file
 port_io.vhd
-4b781436e184d5475b4fd3cd8f8786cd
+8b97f04055f243931f812d331518cbd4
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
