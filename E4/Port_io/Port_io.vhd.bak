@@ -1,0 +1,65 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity port_io is
+  generic (
+    base_addr : std_logic_vector(7 downto 0) := "00000000"
+  );
+  port (
+    clk_in  : in  std_logic;
+    nrst    : in  std_logic;
+    abus    : in  std_logic_vector(7 downto 0);
+    dbus    : inout std_logic_vector(7 downto 0);
+    wr_en   : in  std_logic;
+    rd_en   : in  std_logic;
+    port_io : inout std_logic_vector(7 downto 0)
+  );
+end port_io;
+
+architecture Behavioral of port_io is
+  signal dir_reg    : std_logic_vector(7 downto 0) := (others => '0');
+  signal port_reg   : std_logic_vector(7 downto 0) := (others => '0');
+  signal latch_q      : std_logic_vector(7 downto 0) := (others => '0'); 
+  signal latch_enable : std_logic;
+begin
+
+  process(clk_in, nrst)
+  begin
+    if nrst = '0' then
+      dir_reg  <= (others => '0'); -- Valor default após o reset.
+      port_reg <= (others => '0'); -- Após o reset, todos os bits ficam zerados.
+    elsif rising_edge(clk_in) then
+      -- Escrita nos registradores dir_reg ou port_reg será síncrona com clk_in.
+      if wr_en = '1' then
+        if abus = base_addr then
+          -- Escrita no port_reg.
+          port_reg <= dbus;
+        elsif abus = std_logic_vector(unsigned(base_addr) + 1) then
+          -- Escrita no dir_reg.
+          dir_reg <= dbus;
+        end if;
+      end if;
+    end if;
+  end process;
+
+  latch_enable <= '1' when rd_en = '1' and abus = base_addr else '0';
+
+  process(latch_enable, port_io)
+  begin
+    if latch_enable = '1' then
+      latch_q <= port_io; -- Latch transparente: Q segue D (port_io)
+    end if; -- Quando latch_enable = '0', latch_q retém o valor anterior
+  end process;
+
+  -- Controle da porta bidirecional
+  gen_port : for i in 0 to 7 generate
+    port_io(i) <= port_reg(i) when dir_reg(i) = '1' else 'Z';
+  end generate;
+
+  -- Leitura via dbus
+  dbus <= latch_q  when (rd_en = '1' and abus = base_addr) else -- Leitura no latch.
+          dir_reg  when (rd_en = '1' and abus = std_logic_vector(unsigned(base_addr) + 1)) else -- Leitura no dir_reg.
+          (others => 'Z');
+
+end Behavioral;

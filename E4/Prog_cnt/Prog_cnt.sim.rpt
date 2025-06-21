@@ -1,0 +1,317 @@
+Simulator report for Prog_cnt
+Mon May 12 17:37:08 2025
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 200.0 ns     ;
+; Simulation Netlist Size     ; 84 nodes     ;
+; Simulation Coverage         ;      28.72 % ;
+; Total Number of Transitions ; 209          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Stratix II   ;
+; Device                      ; EP2S15F484C3 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      28.72 % ;
+; Total nodes checked                                 ; 84           ;
+; Total output ports checked                          ; 94           ;
+; Total output ports with complete 1/0-value coverage ; 27           ;
+; Total output ports with no 1/0-value coverage       ; 62           ;
+; Total output ports with no 1-value coverage         ; 62           ;
+; Total output ports with no 0-value coverage         ; 67           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                  ;
++--------------------------+--------------------------------+------------------+
+; Node Name                ; Output Port Name               ; Output Port Type ;
++--------------------------+--------------------------------+------------------+
+; |prog_cnt|Add0~1         ; |prog_cnt|Add0~1               ; sumout           ;
+; |prog_cnt|Add0~1         ; |prog_cnt|Add0~2               ; cout             ;
+; |prog_cnt|Add0~5         ; |prog_cnt|Add0~5               ; sumout           ;
+; |prog_cnt|Add0~5         ; |prog_cnt|Add0~6               ; cout             ;
+; |prog_cnt|Add0~9         ; |prog_cnt|Add0~9               ; sumout           ;
+; |prog_cnt|pc_reg[0]      ; |prog_cnt|pc_reg[0]            ; regout           ;
+; |prog_cnt|Mux10~0        ; |prog_cnt|Mux10~0              ; combout          ;
+; |prog_cnt|pc_reg[1]      ; |prog_cnt|pc_reg[1]            ; regout           ;
+; |prog_cnt|Mux9~0         ; |prog_cnt|Mux9~0               ; combout          ;
+; |prog_cnt|pc_reg[2]      ; |prog_cnt|pc_reg[2]            ; regout           ;
+; |prog_cnt|Mux8~0         ; |prog_cnt|Mux8~0               ; combout          ;
+; |prog_cnt|Mux7~0         ; |prog_cnt|Mux7~0               ; combout          ;
+; |prog_cnt|next_pc_out[0] ; |prog_cnt|next_pc_out[0]       ; padio            ;
+; |prog_cnt|next_pc_out[1] ; |prog_cnt|next_pc_out[1]       ; padio            ;
+; |prog_cnt|next_pc_out[2] ; |prog_cnt|next_pc_out[2]       ; padio            ;
+; |prog_cnt|next_pc_out[3] ; |prog_cnt|next_pc_out[3]       ; padio            ;
+; |prog_cnt|pc_out[0]      ; |prog_cnt|pc_out[0]            ; padio            ;
+; |prog_cnt|pc_out[1]      ; |prog_cnt|pc_out[1]            ; padio            ;
+; |prog_cnt|pc_out[2]      ; |prog_cnt|pc_out[2]            ; padio            ;
+; |prog_cnt|new_pc_in[0]   ; |prog_cnt|new_pc_in[0]~corein  ; combout          ;
+; |prog_cnt|pc_ctrl[1]     ; |prog_cnt|pc_ctrl[1]~corein    ; combout          ;
+; |prog_cnt|pc_ctrl[0]     ; |prog_cnt|pc_ctrl[0]~corein    ; combout          ;
+; |prog_cnt|from_stack[1]  ; |prog_cnt|from_stack[1]~corein ; combout          ;
+; |prog_cnt|new_pc_in[2]   ; |prog_cnt|new_pc_in[2]~corein  ; combout          ;
+; |prog_cnt|from_stack[3]  ; |prog_cnt|from_stack[3]~corein ; combout          ;
+; |prog_cnt|clk_in         ; |prog_cnt|clk_in~corein        ; combout          ;
+; |prog_cnt|clk_in~clkctrl ; |prog_cnt|clk_in~clkctrl       ; outclk           ;
++--------------------------+--------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++---------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                        ;
++----------------------------+---------------------------------+------------------+
+; Node Name                  ; Output Port Name                ; Output Port Type ;
++----------------------------+---------------------------------+------------------+
+; |prog_cnt|Add0~9           ; |prog_cnt|Add0~10               ; cout             ;
+; |prog_cnt|Add0~13          ; |prog_cnt|Add0~14               ; cout             ;
+; |prog_cnt|Add0~17          ; |prog_cnt|Add0~17               ; sumout           ;
+; |prog_cnt|Add0~17          ; |prog_cnt|Add0~18               ; cout             ;
+; |prog_cnt|Add0~21          ; |prog_cnt|Add0~21               ; sumout           ;
+; |prog_cnt|Add0~21          ; |prog_cnt|Add0~22               ; cout             ;
+; |prog_cnt|Add0~25          ; |prog_cnt|Add0~25               ; sumout           ;
+; |prog_cnt|Add0~25          ; |prog_cnt|Add0~26               ; cout             ;
+; |prog_cnt|Add0~29          ; |prog_cnt|Add0~29               ; sumout           ;
+; |prog_cnt|Add0~29          ; |prog_cnt|Add0~30               ; cout             ;
+; |prog_cnt|Add0~33          ; |prog_cnt|Add0~33               ; sumout           ;
+; |prog_cnt|Add0~33          ; |prog_cnt|Add0~34               ; cout             ;
+; |prog_cnt|Add0~37          ; |prog_cnt|Add0~37               ; sumout           ;
+; |prog_cnt|Add0~37          ; |prog_cnt|Add0~38               ; cout             ;
+; |prog_cnt|Add0~41          ; |prog_cnt|Add0~41               ; sumout           ;
+; |prog_cnt|pc_reg[4]        ; |prog_cnt|pc_reg[4]             ; regout           ;
+; |prog_cnt|Mux6~0           ; |prog_cnt|Mux6~0                ; combout          ;
+; |prog_cnt|pc_reg[5]        ; |prog_cnt|pc_reg[5]             ; regout           ;
+; |prog_cnt|Mux5~0           ; |prog_cnt|Mux5~0                ; combout          ;
+; |prog_cnt|pc_reg[6]        ; |prog_cnt|pc_reg[6]             ; regout           ;
+; |prog_cnt|Mux4~0           ; |prog_cnt|Mux4~0                ; combout          ;
+; |prog_cnt|pc_reg[7]        ; |prog_cnt|pc_reg[7]             ; regout           ;
+; |prog_cnt|Mux3~0           ; |prog_cnt|Mux3~0                ; combout          ;
+; |prog_cnt|pc_reg[8]        ; |prog_cnt|pc_reg[8]             ; regout           ;
+; |prog_cnt|Mux2~0           ; |prog_cnt|Mux2~0                ; combout          ;
+; |prog_cnt|pc_reg[9]        ; |prog_cnt|pc_reg[9]             ; regout           ;
+; |prog_cnt|Mux1~0           ; |prog_cnt|Mux1~0                ; combout          ;
+; |prog_cnt|pc_reg[10]       ; |prog_cnt|pc_reg[10]            ; regout           ;
+; |prog_cnt|Mux0~0           ; |prog_cnt|Mux0~0                ; combout          ;
+; |prog_cnt|next_pc_out[4]   ; |prog_cnt|next_pc_out[4]        ; padio            ;
+; |prog_cnt|next_pc_out[5]   ; |prog_cnt|next_pc_out[5]        ; padio            ;
+; |prog_cnt|next_pc_out[6]   ; |prog_cnt|next_pc_out[6]        ; padio            ;
+; |prog_cnt|next_pc_out[7]   ; |prog_cnt|next_pc_out[7]        ; padio            ;
+; |prog_cnt|next_pc_out[8]   ; |prog_cnt|next_pc_out[8]        ; padio            ;
+; |prog_cnt|next_pc_out[9]   ; |prog_cnt|next_pc_out[9]        ; padio            ;
+; |prog_cnt|next_pc_out[10]  ; |prog_cnt|next_pc_out[10]       ; padio            ;
+; |prog_cnt|pc_out[4]        ; |prog_cnt|pc_out[4]             ; padio            ;
+; |prog_cnt|pc_out[5]        ; |prog_cnt|pc_out[5]             ; padio            ;
+; |prog_cnt|pc_out[6]        ; |prog_cnt|pc_out[6]             ; padio            ;
+; |prog_cnt|pc_out[7]        ; |prog_cnt|pc_out[7]             ; padio            ;
+; |prog_cnt|pc_out[8]        ; |prog_cnt|pc_out[8]             ; padio            ;
+; |prog_cnt|pc_out[9]        ; |prog_cnt|pc_out[9]             ; padio            ;
+; |prog_cnt|pc_out[10]       ; |prog_cnt|pc_out[10]            ; padio            ;
+; |prog_cnt|from_stack[0]    ; |prog_cnt|from_stack[0]~corein  ; combout          ;
+; |prog_cnt|new_pc_in[1]     ; |prog_cnt|new_pc_in[1]~corein   ; combout          ;
+; |prog_cnt|from_stack[2]    ; |prog_cnt|from_stack[2]~corein  ; combout          ;
+; |prog_cnt|new_pc_in[3]     ; |prog_cnt|new_pc_in[3]~corein   ; combout          ;
+; |prog_cnt|from_stack[4]    ; |prog_cnt|from_stack[4]~corein  ; combout          ;
+; |prog_cnt|new_pc_in[4]     ; |prog_cnt|new_pc_in[4]~corein   ; combout          ;
+; |prog_cnt|from_stack[5]    ; |prog_cnt|from_stack[5]~corein  ; combout          ;
+; |prog_cnt|new_pc_in[5]     ; |prog_cnt|new_pc_in[5]~corein   ; combout          ;
+; |prog_cnt|from_stack[6]    ; |prog_cnt|from_stack[6]~corein  ; combout          ;
+; |prog_cnt|new_pc_in[6]     ; |prog_cnt|new_pc_in[6]~corein   ; combout          ;
+; |prog_cnt|from_stack[7]    ; |prog_cnt|from_stack[7]~corein  ; combout          ;
+; |prog_cnt|new_pc_in[7]     ; |prog_cnt|new_pc_in[7]~corein   ; combout          ;
+; |prog_cnt|from_stack[8]    ; |prog_cnt|from_stack[8]~corein  ; combout          ;
+; |prog_cnt|new_pc_in[8]     ; |prog_cnt|new_pc_in[8]~corein   ; combout          ;
+; |prog_cnt|from_stack[9]    ; |prog_cnt|from_stack[9]~corein  ; combout          ;
+; |prog_cnt|new_pc_in[9]     ; |prog_cnt|new_pc_in[9]~corein   ; combout          ;
+; |prog_cnt|from_stack[10]   ; |prog_cnt|from_stack[10]~corein ; combout          ;
+; |prog_cnt|new_pc_in[10]    ; |prog_cnt|new_pc_in[10]~corein  ; combout          ;
+; |prog_cnt|pc_reg[8]~feeder ; |prog_cnt|pc_reg[8]~feeder      ; combout          ;
++----------------------------+---------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++---------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                        ;
++----------------------------+---------------------------------+------------------+
+; Node Name                  ; Output Port Name                ; Output Port Type ;
++----------------------------+---------------------------------+------------------+
+; |prog_cnt|Add0~9           ; |prog_cnt|Add0~10               ; cout             ;
+; |prog_cnt|Add0~13          ; |prog_cnt|Add0~13               ; sumout           ;
+; |prog_cnt|Add0~13          ; |prog_cnt|Add0~14               ; cout             ;
+; |prog_cnt|Add0~17          ; |prog_cnt|Add0~17               ; sumout           ;
+; |prog_cnt|Add0~17          ; |prog_cnt|Add0~18               ; cout             ;
+; |prog_cnt|Add0~21          ; |prog_cnt|Add0~21               ; sumout           ;
+; |prog_cnt|Add0~21          ; |prog_cnt|Add0~22               ; cout             ;
+; |prog_cnt|Add0~25          ; |prog_cnt|Add0~25               ; sumout           ;
+; |prog_cnt|Add0~25          ; |prog_cnt|Add0~26               ; cout             ;
+; |prog_cnt|Add0~29          ; |prog_cnt|Add0~29               ; sumout           ;
+; |prog_cnt|Add0~29          ; |prog_cnt|Add0~30               ; cout             ;
+; |prog_cnt|Add0~33          ; |prog_cnt|Add0~33               ; sumout           ;
+; |prog_cnt|Add0~33          ; |prog_cnt|Add0~34               ; cout             ;
+; |prog_cnt|Add0~37          ; |prog_cnt|Add0~37               ; sumout           ;
+; |prog_cnt|Add0~37          ; |prog_cnt|Add0~38               ; cout             ;
+; |prog_cnt|Add0~41          ; |prog_cnt|Add0~41               ; sumout           ;
+; |prog_cnt|pc_reg[3]        ; |prog_cnt|pc_reg[3]             ; regout           ;
+; |prog_cnt|pc_reg[4]        ; |prog_cnt|pc_reg[4]             ; regout           ;
+; |prog_cnt|Mux6~0           ; |prog_cnt|Mux6~0                ; combout          ;
+; |prog_cnt|pc_reg[5]        ; |prog_cnt|pc_reg[5]             ; regout           ;
+; |prog_cnt|Mux5~0           ; |prog_cnt|Mux5~0                ; combout          ;
+; |prog_cnt|pc_reg[6]        ; |prog_cnt|pc_reg[6]             ; regout           ;
+; |prog_cnt|Mux4~0           ; |prog_cnt|Mux4~0                ; combout          ;
+; |prog_cnt|pc_reg[7]        ; |prog_cnt|pc_reg[7]             ; regout           ;
+; |prog_cnt|Mux3~0           ; |prog_cnt|Mux3~0                ; combout          ;
+; |prog_cnt|pc_reg[8]        ; |prog_cnt|pc_reg[8]             ; regout           ;
+; |prog_cnt|Mux2~0           ; |prog_cnt|Mux2~0                ; combout          ;
+; |prog_cnt|pc_reg[9]        ; |prog_cnt|pc_reg[9]             ; regout           ;
+; |prog_cnt|Mux1~0           ; |prog_cnt|Mux1~0                ; combout          ;
+; |prog_cnt|pc_reg[10]       ; |prog_cnt|pc_reg[10]            ; regout           ;
+; |prog_cnt|Mux0~0           ; |prog_cnt|Mux0~0                ; combout          ;
+; |prog_cnt|next_pc_out[4]   ; |prog_cnt|next_pc_out[4]        ; padio            ;
+; |prog_cnt|next_pc_out[5]   ; |prog_cnt|next_pc_out[5]        ; padio            ;
+; |prog_cnt|next_pc_out[6]   ; |prog_cnt|next_pc_out[6]        ; padio            ;
+; |prog_cnt|next_pc_out[7]   ; |prog_cnt|next_pc_out[7]        ; padio            ;
+; |prog_cnt|next_pc_out[8]   ; |prog_cnt|next_pc_out[8]        ; padio            ;
+; |prog_cnt|next_pc_out[9]   ; |prog_cnt|next_pc_out[9]        ; padio            ;
+; |prog_cnt|next_pc_out[10]  ; |prog_cnt|next_pc_out[10]       ; padio            ;
+; |prog_cnt|pc_out[3]        ; |prog_cnt|pc_out[3]             ; padio            ;
+; |prog_cnt|pc_out[4]        ; |prog_cnt|pc_out[4]             ; padio            ;
+; |prog_cnt|pc_out[5]        ; |prog_cnt|pc_out[5]             ; padio            ;
+; |prog_cnt|pc_out[6]        ; |prog_cnt|pc_out[6]             ; padio            ;
+; |prog_cnt|pc_out[7]        ; |prog_cnt|pc_out[7]             ; padio            ;
+; |prog_cnt|pc_out[8]        ; |prog_cnt|pc_out[8]             ; padio            ;
+; |prog_cnt|pc_out[9]        ; |prog_cnt|pc_out[9]             ; padio            ;
+; |prog_cnt|pc_out[10]       ; |prog_cnt|pc_out[10]            ; padio            ;
+; |prog_cnt|from_stack[0]    ; |prog_cnt|from_stack[0]~corein  ; combout          ;
+; |prog_cnt|new_pc_in[1]     ; |prog_cnt|new_pc_in[1]~corein   ; combout          ;
+; |prog_cnt|from_stack[2]    ; |prog_cnt|from_stack[2]~corein  ; combout          ;
+; |prog_cnt|new_pc_in[3]     ; |prog_cnt|new_pc_in[3]~corein   ; combout          ;
+; |prog_cnt|from_stack[4]    ; |prog_cnt|from_stack[4]~corein  ; combout          ;
+; |prog_cnt|new_pc_in[4]     ; |prog_cnt|new_pc_in[4]~corein   ; combout          ;
+; |prog_cnt|from_stack[5]    ; |prog_cnt|from_stack[5]~corein  ; combout          ;
+; |prog_cnt|new_pc_in[5]     ; |prog_cnt|new_pc_in[5]~corein   ; combout          ;
+; |prog_cnt|from_stack[6]    ; |prog_cnt|from_stack[6]~corein  ; combout          ;
+; |prog_cnt|new_pc_in[6]     ; |prog_cnt|new_pc_in[6]~corein   ; combout          ;
+; |prog_cnt|from_stack[7]    ; |prog_cnt|from_stack[7]~corein  ; combout          ;
+; |prog_cnt|new_pc_in[7]     ; |prog_cnt|new_pc_in[7]~corein   ; combout          ;
+; |prog_cnt|from_stack[8]    ; |prog_cnt|from_stack[8]~corein  ; combout          ;
+; |prog_cnt|new_pc_in[8]     ; |prog_cnt|new_pc_in[8]~corein   ; combout          ;
+; |prog_cnt|from_stack[9]    ; |prog_cnt|from_stack[9]~corein  ; combout          ;
+; |prog_cnt|new_pc_in[9]     ; |prog_cnt|new_pc_in[9]~corein   ; combout          ;
+; |prog_cnt|from_stack[10]   ; |prog_cnt|from_stack[10]~corein ; combout          ;
+; |prog_cnt|new_pc_in[10]    ; |prog_cnt|new_pc_in[10]~corein  ; combout          ;
+; |prog_cnt|nrst             ; |prog_cnt|nrst~corein           ; combout          ;
+; |prog_cnt|nrst~clkctrl     ; |prog_cnt|nrst~clkctrl          ; outclk           ;
+; |prog_cnt|pc_reg[8]~feeder ; |prog_cnt|pc_reg[8]~feeder      ; combout          ;
++----------------------------+---------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Mon May 12 17:37:08 2025
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off Prog_cnt -c Prog_cnt
+Info: Using vector source file "C:/Users/ammag/OneDrive/Área de Trabalho/Puc/07_Sistemas_Rec/Tp2/Prog_cnt/Prog_cnt.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      28.72 %
+Info: Number of transitions in simulation is 209
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 153 megabytes
+    Info: Processing ended: Mon May 12 17:37:08 2025
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

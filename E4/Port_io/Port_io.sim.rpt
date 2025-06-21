@@ -1,0 +1,274 @@
+Simulator report for Port_io
+Tue Jun 03 02:37:08 2025
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 200.0 ns     ;
+; Simulation Netlist Size     ; 76 nodes     ;
+; Simulation Coverage         ;      63.16 % ;
+; Total Number of Transitions ; 853          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Stratix II   ;
+; Device                      ; EP2S15F484C3 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      63.16 % ;
+; Total nodes checked                                 ; 76           ;
+; Total output ports checked                          ; 76           ;
+; Total output ports with complete 1/0-value coverage ; 48           ;
+; Total output ports with no 1/0-value coverage       ; 4            ;
+; Total output ports with no 1-value coverage         ; 14           ;
+; Total output ports with no 0-value coverage         ; 18           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                  ;
++-----------------------------+-----------------------------+------------------+
+; Node Name                   ; Output Port Name            ; Output Port Type ;
++-----------------------------+-----------------------------+------------------+
+; |port_io|dir_reg[0]         ; |port_io|dir_reg[0]         ; regout           ;
+; |port_io|dbus[0]~16         ; |port_io|dbus[0]~16         ; combout          ;
+; |port_io|dbus[7]~17         ; |port_io|dbus[7]~17         ; combout          ;
+; |port_io|dir_reg[1]         ; |port_io|dir_reg[1]         ; regout           ;
+; |port_io|dbus[1]~18         ; |port_io|dbus[1]~18         ; combout          ;
+; |port_io|dbus[3]~20         ; |port_io|dbus[3]~20         ; combout          ;
+; |port_io|dbus[4]~21         ; |port_io|dbus[4]~21         ; combout          ;
+; |port_io|dbus[5]~22         ; |port_io|dbus[5]~22         ; combout          ;
+; |port_io|dbus[6]~23         ; |port_io|dbus[6]~23         ; combout          ;
+; |port_io|dbus[7]~24         ; |port_io|dbus[7]~24         ; combout          ;
+; |port_io|port_reg[0]        ; |port_io|port_reg[0]        ; regout           ;
+; |port_io|port_reg[2]        ; |port_io|port_reg[2]        ; regout           ;
+; |port_io|port_reg[4]        ; |port_io|port_reg[4]        ; regout           ;
+; |port_io|port_reg[6]        ; |port_io|port_reg[6]        ; regout           ;
+; |port_io|dir_reg[0]~0       ; |port_io|dir_reg[0]~0       ; combout          ;
+; |port_io|process_0~0        ; |port_io|process_0~0        ; combout          ;
+; |port_io|dbus[0]            ; |port_io|dbus[0]~0          ; combout          ;
+; |port_io|dbus[0]            ; |port_io|dbus[0]~output     ; padio            ;
+; |port_io|dbus[1]            ; |port_io|dbus[1]~1          ; combout          ;
+; |port_io|dbus[1]            ; |port_io|dbus[1]~output     ; padio            ;
+; |port_io|dbus[2]            ; |port_io|dbus[2]~2          ; combout          ;
+; |port_io|dbus[2]            ; |port_io|dbus[2]~output     ; padio            ;
+; |port_io|dbus[3]            ; |port_io|dbus[3]~3          ; combout          ;
+; |port_io|dbus[3]            ; |port_io|dbus[3]~output     ; padio            ;
+; |port_io|dbus[4]            ; |port_io|dbus[4]~4          ; combout          ;
+; |port_io|dbus[4]            ; |port_io|dbus[4]~output     ; padio            ;
+; |port_io|dbus[5]            ; |port_io|dbus[5]~5          ; combout          ;
+; |port_io|dbus[5]            ; |port_io|dbus[5]~output     ; padio            ;
+; |port_io|dbus[6]            ; |port_io|dbus[6]~6          ; combout          ;
+; |port_io|dbus[6]            ; |port_io|dbus[6]~output     ; padio            ;
+; |port_io|dbus[7]            ; |port_io|dbus[7]~7          ; combout          ;
+; |port_io|dbus[7]            ; |port_io|dbus[7]~output     ; padio            ;
+; |port_io|port_io[0]         ; |port_io|port_io[0]~0       ; combout          ;
+; |port_io|port_io[0]         ; |port_io|port_io[0]~output  ; padio            ;
+; |port_io|port_io[1]         ; |port_io|port_io[1]~1       ; combout          ;
+; |port_io|port_io[2]         ; |port_io|port_io[2]~output  ; padio            ;
+; |port_io|port_io[3]         ; |port_io|port_io[3]~output  ; padio            ;
+; |port_io|port_io[4]         ; |port_io|port_io[4]~output  ; padio            ;
+; |port_io|port_io[5]         ; |port_io|port_io[5]~5       ; combout          ;
+; |port_io|port_io[6]         ; |port_io|port_io[6]~6       ; combout          ;
+; |port_io|port_io[7]         ; |port_io|port_io[7]~7       ; combout          ;
+; |port_io|rd_en              ; |port_io|rd_en~corein       ; combout          ;
+; |port_io|abus[0]            ; |port_io|abus[0]~corein     ; combout          ;
+; |port_io|clk_in             ; |port_io|clk_in~corein      ; combout          ;
+; |port_io|wr_en              ; |port_io|wr_en~corein       ; combout          ;
+; |port_io|clk_in~clkctrl     ; |port_io|clk_in~clkctrl     ; outclk           ;
+; |port_io|port_reg[5]~feeder ; |port_io|port_reg[5]~feeder ; combout          ;
+; |port_io|port_reg[7]~feeder ; |port_io|port_reg[7]~feeder ; combout          ;
++-----------------------------+-----------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++---------------------------------------------------------------------+
+; Missing 1-Value Coverage                                            ;
++---------------------+----------------------------+------------------+
+; Node Name           ; Output Port Name           ; Output Port Type ;
++---------------------+----------------------------+------------------+
+; |port_io|dir_reg[6] ; |port_io|dir_reg[6]        ; regout           ;
+; |port_io|dir_reg[7] ; |port_io|dir_reg[7]        ; regout           ;
+; |port_io|port_io[1] ; |port_io|port_io[1]~output ; padio            ;
+; |port_io|port_io[2] ; |port_io|port_io[2]~2      ; combout          ;
+; |port_io|port_io[4] ; |port_io|port_io[4]~4      ; combout          ;
+; |port_io|port_io[6] ; |port_io|port_io[6]~output ; padio            ;
+; |port_io|port_io[7] ; |port_io|port_io[7]~output ; padio            ;
+; |port_io|abus[7]    ; |port_io|abus[7]~corein    ; combout          ;
+; |port_io|abus[6]    ; |port_io|abus[6]~corein    ; combout          ;
+; |port_io|abus[5]    ; |port_io|abus[5]~corein    ; combout          ;
+; |port_io|abus[4]    ; |port_io|abus[4]~corein    ; combout          ;
+; |port_io|abus[3]    ; |port_io|abus[3]~corein    ; combout          ;
+; |port_io|abus[1]    ; |port_io|abus[1]~corein    ; combout          ;
+; |port_io|abus[2]    ; |port_io|abus[2]~corein    ; combout          ;
++---------------------+----------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++-----------------------------------------------------------------------+
+; Missing 0-Value Coverage                                              ;
++-----------------------+----------------------------+------------------+
+; Node Name             ; Output Port Name           ; Output Port Type ;
++-----------------------+----------------------------+------------------+
+; |port_io|Equal0~0     ; |port_io|Equal0~0          ; combout          ;
+; |port_io|dir_reg[2]   ; |port_io|dir_reg[2]        ; regout           ;
+; |port_io|dbus[2]~19   ; |port_io|dbus[2]~19        ; combout          ;
+; |port_io|dir_reg[3]   ; |port_io|dir_reg[3]        ; regout           ;
+; |port_io|dir_reg[4]   ; |port_io|dir_reg[4]        ; regout           ;
+; |port_io|dir_reg[5]   ; |port_io|dir_reg[5]        ; regout           ;
+; |port_io|dir_reg[6]   ; |port_io|dir_reg[6]        ; regout           ;
+; |port_io|dir_reg[7]   ; |port_io|dir_reg[7]        ; regout           ;
+; |port_io|port_reg[1]  ; |port_io|port_reg[1]       ; regout           ;
+; |port_io|port_reg[3]  ; |port_io|port_reg[3]       ; regout           ;
+; |port_io|port_reg[5]  ; |port_io|port_reg[5]       ; regout           ;
+; |port_io|port_reg[7]  ; |port_io|port_reg[7]       ; regout           ;
+; |port_io|port_io[3]   ; |port_io|port_io[3]~3      ; combout          ;
+; |port_io|port_io[5]   ; |port_io|port_io[5]~output ; padio            ;
+; |port_io|port_io[6]   ; |port_io|port_io[6]~output ; padio            ;
+; |port_io|port_io[7]   ; |port_io|port_io[7]~output ; padio            ;
+; |port_io|nrst         ; |port_io|nrst~corein       ; combout          ;
+; |port_io|nrst~clkctrl ; |port_io|nrst~clkctrl      ; outclk           ;
++-----------------------+----------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Tue Jun 03 02:37:08 2025
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off Port_io -c Port_io
+Info: Using vector source file "C:/Users/ammag/OneDrive/Área de Trabalho/Puc/07_Sistemas_Rec/E3/Port_io/Port_io.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Warning: Found logic contention at time 60.1 ns on bus node "|port_io|port_io[3]~result"
+    Info: Node "port_io[3]~output" has logic level of 0
+    Info: Node "port_io[3]" has logic level of X
+Warning: Found logic contention at time 60.7 ns on bus node "|port_io|port_io[0]~result"
+    Info: Node "port_io[0]~output" has logic level of 0
+    Info: Node "port_io[0]" has logic level of X
+Warning: Found logic contention at time 61.06 ns on bus node "|port_io|port_io[2]~result"
+    Info: Node "port_io[2]~output" has logic level of 0
+    Info: Node "port_io[2]" has logic level of X
+Warning: Found logic contention at time 62.01 ns on bus node "|port_io|port_io[1]~result"
+    Info: Node "port_io[1]~output" has logic level of 0
+    Info: Node "port_io[1]" has logic level of X
+Warning: Found logic contention at time 70.81 ns on bus node "|port_io|port_io[0]~result"
+    Info: Node "port_io[0]~output" has logic level of 1
+    Info: Node "port_io[0]" has logic level of X
+Warning: Found logic contention at time 71.24 ns on bus node "|port_io|port_io[2]~result"
+    Info: Node "port_io[2]~output" has logic level of 1
+    Info: Node "port_io[2]" has logic level of X
+Warning: Found logic contention at time 120.67 ns on bus node "|port_io|port_io[4]~result"
+    Info: Node "port_io[4]~output" has logic level of 1
+    Info: Node "port_io[4]" has logic level of X
+Warning: Found logic contention at time 120.83 ns on bus node "|port_io|port_io[5]~result"
+    Info: Node "port_io[5]~output" has logic level of 1
+    Info: Node "port_io[5]" has logic level of X
+Warning: Found logic contention at time 130.16 ns on bus node "|port_io|port_io[4]~result"
+    Info: Node "port_io[4]~output" has logic level of 0
+    Info: Node "port_io[4]" has logic level of X
+Warning: Found logic contention at time 130.18 ns on bus node "|port_io|port_io[3]~result"
+    Info: Node "port_io[3]~output" has logic level of 1
+    Info: Node "port_io[3]" has logic level of X
+Warning: Found logic contention at time 131.24 ns on bus node "|port_io|port_io[2]~result"
+    Info: Node "port_io[2]~output" has logic level of 0
+    Info: Node "port_io[2]" has logic level of X
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      63.16 %
+Info: Number of transitions in simulation is 853
+Info: Quartus II Simulator was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 153 megabytes
+    Info: Processing ended: Tue Jun 03 02:37:08 2025
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

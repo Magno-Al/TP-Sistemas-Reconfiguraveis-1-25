@@ -1,0 +1,756 @@
+Classic Timing Analyzer report for Stack
+Mon May 12 17:19:17 2025
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk_in'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                           ;
++------------------------------+-------+---------------+------------------------------------------------+-----------------+------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                                    ; From            ; To               ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+------------------------------------------------+-----------------+------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 5.258 ns                                       ; stack_pop       ; stack_reg[6][10] ; --         ; clk_in   ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 6.404 ns                                       ; stack_reg[0][7] ; stack_out[7]     ; clk_in     ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -2.267 ns                                      ; stack_in[6]     ; stack_reg[0][6]  ; --         ; clk_in   ; 0            ;
+; Clock Setup: 'clk_in'        ; N/A   ; None          ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[4][2] ; stack_reg[3][2]  ; clk_in     ; clk_in   ; 0            ;
+; Total number of failed paths ;       ;               ;                                                ;                 ;                  ;            ;          ; 0            ;
++------------------------------+-------+---------------+------------------------------------------------+-----------------+------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2S15F484C3       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; Off                ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk_in          ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 10     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk_in'                                                                                                                                                                                    ;
++-------+------------------------------------------------+------------------+------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From             ; To               ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+------------------+------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[4][2]  ; stack_reg[3][2]  ; clk_in     ; clk_in   ; None                        ; None                      ; 1.146 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[7][10] ; stack_reg[6][10] ; clk_in     ; clk_in   ; None                        ; None                      ; 1.099 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[7][9]  ; stack_reg[6][9]  ; clk_in     ; clk_in   ; None                        ; None                      ; 1.061 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[6][10] ; stack_reg[7][10] ; clk_in     ; clk_in   ; None                        ; None                      ; 1.053 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[6][9]  ; stack_reg[7][9]  ; clk_in     ; clk_in   ; None                        ; None                      ; 1.041 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[2][5]  ; stack_reg[1][5]  ; clk_in     ; clk_in   ; None                        ; None                      ; 1.023 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[1][5]  ; stack_reg[2][5]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.968 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[3][2]  ; stack_reg[4][2]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.983 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[1][2]  ; stack_reg[2][2]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.952 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[6][5]  ; stack_reg[7][5]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.930 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[6][8]  ; stack_reg[7][8]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.925 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[2][4]  ; stack_reg[3][4]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.923 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[6][4]  ; stack_reg[7][4]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.907 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[6][3]  ; stack_reg[7][3]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.899 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[2][8]  ; stack_reg[1][8]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.888 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[6][2]  ; stack_reg[7][2]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.879 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[7][2]  ; stack_reg[6][2]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.903 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[7][8]  ; stack_reg[6][8]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.894 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[7][1]  ; stack_reg[6][1]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.875 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[7][5]  ; stack_reg[6][5]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.877 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[6][1]  ; stack_reg[7][1]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.857 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[6][0]  ; stack_reg[7][0]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.855 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[7][3]  ; stack_reg[6][3]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.867 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[7][4]  ; stack_reg[6][4]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.866 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[7][0]  ; stack_reg[6][0]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.843 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[2][4]  ; stack_reg[1][4]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.815 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[2][2]  ; stack_reg[1][2]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.810 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[1][8]  ; stack_reg[2][8]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.813 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[4][0]  ; stack_reg[5][0]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.797 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[5][1]  ; stack_reg[6][1]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.797 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[5][6]  ; stack_reg[6][6]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.797 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[0][9]  ; stack_reg[1][9]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.797 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[4][9]  ; stack_reg[5][9]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.797 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[5][10] ; stack_reg[6][10] ; clk_in     ; clk_in   ; None                        ; None                      ; 0.797 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[4][3]  ; stack_reg[5][3]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.791 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[2][10] ; stack_reg[3][10] ; clk_in     ; clk_in   ; None                        ; None                      ; 0.772 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[2][9]  ; stack_reg[3][9]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.771 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[1][3]  ; stack_reg[2][3]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.770 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[0][6]  ; stack_reg[1][6]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.763 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[4][8]  ; stack_reg[5][8]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.721 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[2][0]  ; stack_reg[3][0]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.716 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[0][3]  ; stack_reg[1][3]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.711 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[1][10] ; stack_reg[2][10] ; clk_in     ; clk_in   ; None                        ; None                      ; 0.698 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[1][9]  ; stack_reg[2][9]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.696 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[0][4]  ; stack_reg[1][4]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.643 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[0][2]  ; stack_reg[1][2]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.641 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[4][2]  ; stack_reg[5][2]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.641 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[0][5]  ; stack_reg[1][5]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.641 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[0][10] ; stack_reg[1][10] ; clk_in     ; clk_in   ; None                        ; None                      ; 0.641 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[1][0]  ; stack_reg[2][0]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.635 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[1][9]  ; stack_reg[0][9]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.635 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[1][1]  ; stack_reg[2][1]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.634 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[5][3]  ; stack_reg[6][3]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.634 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[5][4]  ; stack_reg[6][4]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.634 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[1][6]  ; stack_reg[2][6]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.633 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[4][7]  ; stack_reg[5][7]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.633 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[3][8]  ; stack_reg[4][8]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.633 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[2][5]  ; stack_reg[3][5]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.631 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[3][3]  ; stack_reg[4][3]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.630 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[1][10] ; stack_reg[0][10] ; clk_in     ; clk_in   ; None                        ; None                      ; 0.630 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[3][5]  ; stack_reg[4][5]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.629 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[3][1]  ; stack_reg[2][1]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.624 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[1][5]  ; stack_reg[0][5]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.623 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[2][0]  ; stack_reg[1][0]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.618 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[4][8]  ; stack_reg[3][8]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.612 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[4][10] ; stack_reg[5][10] ; clk_in     ; clk_in   ; None                        ; None                      ; 0.612 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[7][7]  ; stack_reg[6][7]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.610 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[6][7]  ; stack_reg[7][7]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.611 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[6][6]  ; stack_reg[7][6]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.609 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[4][1]  ; stack_reg[5][1]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.607 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[7][6]  ; stack_reg[6][6]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.606 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[0][7]  ; stack_reg[1][7]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.607 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[4][6]  ; stack_reg[5][6]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.605 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[4][4]  ; stack_reg[5][4]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.604 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[4][5]  ; stack_reg[5][5]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.602 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[3][0]  ; stack_reg[4][0]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.601 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[5][8]  ; stack_reg[6][8]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.601 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[5][5]  ; stack_reg[6][5]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.597 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[3][7]  ; stack_reg[4][7]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.570 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[3][2]  ; stack_reg[2][2]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.549 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[4][0]  ; stack_reg[3][0]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.540 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[6][0]  ; stack_reg[5][0]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.540 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[6][9]  ; stack_reg[5][9]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.540 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[4][9]  ; stack_reg[3][9]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.539 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[5][1]  ; stack_reg[4][1]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.538 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[1][8]  ; stack_reg[0][8]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.538 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[5][10] ; stack_reg[4][10] ; clk_in     ; clk_in   ; None                        ; None                      ; 0.538 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[2][9]  ; stack_reg[1][9]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.537 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[2][10] ; stack_reg[1][10] ; clk_in     ; clk_in   ; None                        ; None                      ; 0.537 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[5][5]  ; stack_reg[4][5]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.536 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[5][6]  ; stack_reg[4][6]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.536 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[3][8]  ; stack_reg[2][8]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.536 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[4][10] ; stack_reg[3][10] ; clk_in     ; clk_in   ; None                        ; None                      ; 0.536 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[1][1]  ; stack_reg[0][1]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.535 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[1][6]  ; stack_reg[0][6]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.535 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[6][2]  ; stack_reg[5][2]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.534 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[5][4]  ; stack_reg[4][4]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.534 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[6][7]  ; stack_reg[5][7]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.534 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[4][7]  ; stack_reg[3][7]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.533 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[5][8]  ; stack_reg[4][8]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.533 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[6][3]  ; stack_reg[5][3]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.532 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[4][6]  ; stack_reg[3][6]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.531 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[1][7]  ; stack_reg[0][7]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.531 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[4][1]  ; stack_reg[3][1]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.530 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[4][4]  ; stack_reg[3][4]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.530 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[2][6]  ; stack_reg[1][6]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.530 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[2][3]  ; stack_reg[1][3]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.529 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[5][7]  ; stack_reg[4][7]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.529 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[6][1]  ; stack_reg[5][1]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.527 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[1][2]  ; stack_reg[0][2]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.527 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[1][3]  ; stack_reg[0][3]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.527 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[1][4]  ; stack_reg[0][4]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.527 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[3][6]  ; stack_reg[2][6]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.527 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[6][6]  ; stack_reg[5][6]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.527 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[4][3]  ; stack_reg[3][3]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.526 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[6][10] ; stack_reg[5][10] ; clk_in     ; clk_in   ; None                        ; None                      ; 0.526 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[5][3]  ; stack_reg[4][3]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.525 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[6][8]  ; stack_reg[5][8]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.525 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[4][5]  ; stack_reg[3][5]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.523 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[3][0]  ; stack_reg[2][0]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.522 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[6][4]  ; stack_reg[5][4]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.522 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[5][0]  ; stack_reg[4][0]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.521 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[2][1]  ; stack_reg[1][1]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.521 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[3][4]  ; stack_reg[2][4]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.521 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[3][7]  ; stack_reg[2][7]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.521 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[3][9]  ; stack_reg[2][9]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.521 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[5][9]  ; stack_reg[4][9]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.520 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[3][3]  ; stack_reg[2][3]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.519 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[3][5]  ; stack_reg[2][5]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.519 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[1][0]  ; stack_reg[0][0]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.518 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[5][2]  ; stack_reg[4][2]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.518 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[6][5]  ; stack_reg[5][5]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.517 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[3][10] ; stack_reg[2][10] ; clk_in     ; clk_in   ; None                        ; None                      ; 0.515 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[2][7]  ; stack_reg[1][7]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.514 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[5][7]  ; stack_reg[6][7]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.435 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[2][6]  ; stack_reg[3][6]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.434 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[0][1]  ; stack_reg[1][1]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.432 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[1][7]  ; stack_reg[2][7]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.431 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[0][8]  ; stack_reg[1][8]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.428 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[3][1]  ; stack_reg[4][1]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.426 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[3][9]  ; stack_reg[4][9]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.426 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[1][4]  ; stack_reg[2][4]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.425 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[2][1]  ; stack_reg[3][1]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.423 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[2][2]  ; stack_reg[3][2]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.421 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[5][2]  ; stack_reg[6][2]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.421 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[5][0]  ; stack_reg[6][0]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.420 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[3][6]  ; stack_reg[4][6]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.420 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[2][8]  ; stack_reg[3][8]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.420 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[5][9]  ; stack_reg[6][9]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.420 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[2][3]  ; stack_reg[3][3]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.416 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[3][4]  ; stack_reg[4][4]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.415 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[0][0]  ; stack_reg[1][0]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.414 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[2][7]  ; stack_reg[3][7]  ; clk_in     ; clk_in   ; None                        ; None                      ; 0.411 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; stack_reg[3][10] ; stack_reg[4][10] ; clk_in     ; clk_in   ; None                        ; None                      ; 0.411 ns                ;
++-------+------------------------------------------------+------------------+------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++--------------------------------------------------------------------------------+
+; tsu                                                                            ;
++-------+--------------+------------+--------------+------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From         ; To               ; To Clock ;
++-------+--------------+------------+--------------+------------------+----------+
+; N/A   ; None         ; 5.258 ns   ; stack_pop    ; stack_reg[2][2]  ; clk_in   ;
+; N/A   ; None         ; 5.258 ns   ; stack_pop    ; stack_reg[3][2]  ; clk_in   ;
+; N/A   ; None         ; 5.258 ns   ; stack_pop    ; stack_reg[0][9]  ; clk_in   ;
+; N/A   ; None         ; 5.258 ns   ; stack_pop    ; stack_reg[1][9]  ; clk_in   ;
+; N/A   ; None         ; 5.258 ns   ; stack_pop    ; stack_reg[2][9]  ; clk_in   ;
+; N/A   ; None         ; 5.258 ns   ; stack_pop    ; stack_reg[3][9]  ; clk_in   ;
+; N/A   ; None         ; 5.258 ns   ; stack_pop    ; stack_reg[4][9]  ; clk_in   ;
+; N/A   ; None         ; 5.258 ns   ; stack_pop    ; stack_reg[5][9]  ; clk_in   ;
+; N/A   ; None         ; 5.258 ns   ; stack_pop    ; stack_reg[6][9]  ; clk_in   ;
+; N/A   ; None         ; 5.258 ns   ; stack_pop    ; stack_reg[0][10] ; clk_in   ;
+; N/A   ; None         ; 5.258 ns   ; stack_pop    ; stack_reg[1][10] ; clk_in   ;
+; N/A   ; None         ; 5.258 ns   ; stack_pop    ; stack_reg[2][10] ; clk_in   ;
+; N/A   ; None         ; 5.258 ns   ; stack_pop    ; stack_reg[3][10] ; clk_in   ;
+; N/A   ; None         ; 5.258 ns   ; stack_pop    ; stack_reg[4][10] ; clk_in   ;
+; N/A   ; None         ; 5.258 ns   ; stack_pop    ; stack_reg[5][10] ; clk_in   ;
+; N/A   ; None         ; 5.258 ns   ; stack_pop    ; stack_reg[6][10] ; clk_in   ;
+; N/A   ; None         ; 5.050 ns   ; stack_pop    ; stack_reg[0][3]  ; clk_in   ;
+; N/A   ; None         ; 5.050 ns   ; stack_pop    ; stack_reg[1][3]  ; clk_in   ;
+; N/A   ; None         ; 5.050 ns   ; stack_pop    ; stack_reg[2][3]  ; clk_in   ;
+; N/A   ; None         ; 5.050 ns   ; stack_pop    ; stack_reg[3][3]  ; clk_in   ;
+; N/A   ; None         ; 5.050 ns   ; stack_pop    ; stack_reg[4][3]  ; clk_in   ;
+; N/A   ; None         ; 5.050 ns   ; stack_pop    ; stack_reg[5][3]  ; clk_in   ;
+; N/A   ; None         ; 5.050 ns   ; stack_pop    ; stack_reg[6][3]  ; clk_in   ;
+; N/A   ; None         ; 5.050 ns   ; stack_pop    ; stack_reg[0][4]  ; clk_in   ;
+; N/A   ; None         ; 5.050 ns   ; stack_pop    ; stack_reg[1][4]  ; clk_in   ;
+; N/A   ; None         ; 5.050 ns   ; stack_pop    ; stack_reg[2][4]  ; clk_in   ;
+; N/A   ; None         ; 5.050 ns   ; stack_pop    ; stack_reg[3][4]  ; clk_in   ;
+; N/A   ; None         ; 5.050 ns   ; stack_pop    ; stack_reg[4][4]  ; clk_in   ;
+; N/A   ; None         ; 5.050 ns   ; stack_pop    ; stack_reg[5][4]  ; clk_in   ;
+; N/A   ; None         ; 5.050 ns   ; stack_pop    ; stack_reg[6][4]  ; clk_in   ;
+; N/A   ; None         ; 5.050 ns   ; stack_pop    ; stack_reg[0][5]  ; clk_in   ;
+; N/A   ; None         ; 5.050 ns   ; stack_pop    ; stack_reg[1][5]  ; clk_in   ;
+; N/A   ; None         ; 5.014 ns   ; stack_pop    ; stack_reg[7][0]  ; clk_in   ;
+; N/A   ; None         ; 5.014 ns   ; stack_pop    ; stack_reg[7][1]  ; clk_in   ;
+; N/A   ; None         ; 5.014 ns   ; stack_pop    ; stack_reg[7][2]  ; clk_in   ;
+; N/A   ; None         ; 5.014 ns   ; stack_pop    ; stack_reg[7][3]  ; clk_in   ;
+; N/A   ; None         ; 5.014 ns   ; stack_pop    ; stack_reg[7][4]  ; clk_in   ;
+; N/A   ; None         ; 5.014 ns   ; stack_pop    ; stack_reg[7][5]  ; clk_in   ;
+; N/A   ; None         ; 5.014 ns   ; stack_pop    ; stack_reg[7][6]  ; clk_in   ;
+; N/A   ; None         ; 5.014 ns   ; stack_pop    ; stack_reg[7][7]  ; clk_in   ;
+; N/A   ; None         ; 5.014 ns   ; stack_pop    ; stack_reg[7][8]  ; clk_in   ;
+; N/A   ; None         ; 5.014 ns   ; stack_pop    ; stack_reg[7][9]  ; clk_in   ;
+; N/A   ; None         ; 5.014 ns   ; stack_pop    ; stack_reg[7][10] ; clk_in   ;
+; N/A   ; None         ; 4.896 ns   ; stack_push   ; stack_reg[2][2]  ; clk_in   ;
+; N/A   ; None         ; 4.896 ns   ; stack_push   ; stack_reg[3][2]  ; clk_in   ;
+; N/A   ; None         ; 4.896 ns   ; stack_push   ; stack_reg[0][9]  ; clk_in   ;
+; N/A   ; None         ; 4.896 ns   ; stack_push   ; stack_reg[1][9]  ; clk_in   ;
+; N/A   ; None         ; 4.896 ns   ; stack_push   ; stack_reg[2][9]  ; clk_in   ;
+; N/A   ; None         ; 4.896 ns   ; stack_push   ; stack_reg[3][9]  ; clk_in   ;
+; N/A   ; None         ; 4.896 ns   ; stack_push   ; stack_reg[4][9]  ; clk_in   ;
+; N/A   ; None         ; 4.896 ns   ; stack_push   ; stack_reg[5][9]  ; clk_in   ;
+; N/A   ; None         ; 4.896 ns   ; stack_push   ; stack_reg[6][9]  ; clk_in   ;
+; N/A   ; None         ; 4.896 ns   ; stack_push   ; stack_reg[0][10] ; clk_in   ;
+; N/A   ; None         ; 4.896 ns   ; stack_push   ; stack_reg[1][10] ; clk_in   ;
+; N/A   ; None         ; 4.896 ns   ; stack_push   ; stack_reg[2][10] ; clk_in   ;
+; N/A   ; None         ; 4.896 ns   ; stack_push   ; stack_reg[3][10] ; clk_in   ;
+; N/A   ; None         ; 4.896 ns   ; stack_push   ; stack_reg[4][10] ; clk_in   ;
+; N/A   ; None         ; 4.896 ns   ; stack_push   ; stack_reg[5][10] ; clk_in   ;
+; N/A   ; None         ; 4.896 ns   ; stack_push   ; stack_reg[6][10] ; clk_in   ;
+; N/A   ; None         ; 4.688 ns   ; stack_push   ; stack_reg[0][3]  ; clk_in   ;
+; N/A   ; None         ; 4.688 ns   ; stack_push   ; stack_reg[1][3]  ; clk_in   ;
+; N/A   ; None         ; 4.688 ns   ; stack_push   ; stack_reg[2][3]  ; clk_in   ;
+; N/A   ; None         ; 4.688 ns   ; stack_push   ; stack_reg[3][3]  ; clk_in   ;
+; N/A   ; None         ; 4.688 ns   ; stack_push   ; stack_reg[4][3]  ; clk_in   ;
+; N/A   ; None         ; 4.688 ns   ; stack_push   ; stack_reg[5][3]  ; clk_in   ;
+; N/A   ; None         ; 4.688 ns   ; stack_push   ; stack_reg[6][3]  ; clk_in   ;
+; N/A   ; None         ; 4.688 ns   ; stack_push   ; stack_reg[0][4]  ; clk_in   ;
+; N/A   ; None         ; 4.688 ns   ; stack_push   ; stack_reg[1][4]  ; clk_in   ;
+; N/A   ; None         ; 4.688 ns   ; stack_push   ; stack_reg[2][4]  ; clk_in   ;
+; N/A   ; None         ; 4.688 ns   ; stack_push   ; stack_reg[3][4]  ; clk_in   ;
+; N/A   ; None         ; 4.688 ns   ; stack_push   ; stack_reg[4][4]  ; clk_in   ;
+; N/A   ; None         ; 4.688 ns   ; stack_push   ; stack_reg[5][4]  ; clk_in   ;
+; N/A   ; None         ; 4.688 ns   ; stack_push   ; stack_reg[6][4]  ; clk_in   ;
+; N/A   ; None         ; 4.688 ns   ; stack_push   ; stack_reg[0][5]  ; clk_in   ;
+; N/A   ; None         ; 4.688 ns   ; stack_push   ; stack_reg[1][5]  ; clk_in   ;
+; N/A   ; None         ; 4.686 ns   ; stack_pop    ; stack_reg[0][0]  ; clk_in   ;
+; N/A   ; None         ; 4.686 ns   ; stack_pop    ; stack_reg[1][0]  ; clk_in   ;
+; N/A   ; None         ; 4.686 ns   ; stack_pop    ; stack_reg[2][0]  ; clk_in   ;
+; N/A   ; None         ; 4.686 ns   ; stack_pop    ; stack_reg[3][0]  ; clk_in   ;
+; N/A   ; None         ; 4.686 ns   ; stack_pop    ; stack_reg[4][0]  ; clk_in   ;
+; N/A   ; None         ; 4.686 ns   ; stack_pop    ; stack_reg[5][0]  ; clk_in   ;
+; N/A   ; None         ; 4.686 ns   ; stack_pop    ; stack_reg[6][0]  ; clk_in   ;
+; N/A   ; None         ; 4.686 ns   ; stack_pop    ; stack_reg[0][1]  ; clk_in   ;
+; N/A   ; None         ; 4.686 ns   ; stack_pop    ; stack_reg[1][1]  ; clk_in   ;
+; N/A   ; None         ; 4.686 ns   ; stack_pop    ; stack_reg[2][1]  ; clk_in   ;
+; N/A   ; None         ; 4.686 ns   ; stack_pop    ; stack_reg[3][1]  ; clk_in   ;
+; N/A   ; None         ; 4.686 ns   ; stack_pop    ; stack_reg[4][1]  ; clk_in   ;
+; N/A   ; None         ; 4.686 ns   ; stack_pop    ; stack_reg[5][1]  ; clk_in   ;
+; N/A   ; None         ; 4.686 ns   ; stack_pop    ; stack_reg[6][1]  ; clk_in   ;
+; N/A   ; None         ; 4.686 ns   ; stack_pop    ; stack_reg[0][2]  ; clk_in   ;
+; N/A   ; None         ; 4.686 ns   ; stack_pop    ; stack_reg[1][2]  ; clk_in   ;
+; N/A   ; None         ; 4.652 ns   ; stack_push   ; stack_reg[7][0]  ; clk_in   ;
+; N/A   ; None         ; 4.652 ns   ; stack_push   ; stack_reg[7][1]  ; clk_in   ;
+; N/A   ; None         ; 4.652 ns   ; stack_push   ; stack_reg[7][2]  ; clk_in   ;
+; N/A   ; None         ; 4.652 ns   ; stack_push   ; stack_reg[7][3]  ; clk_in   ;
+; N/A   ; None         ; 4.652 ns   ; stack_push   ; stack_reg[7][4]  ; clk_in   ;
+; N/A   ; None         ; 4.652 ns   ; stack_push   ; stack_reg[7][5]  ; clk_in   ;
+; N/A   ; None         ; 4.652 ns   ; stack_push   ; stack_reg[7][6]  ; clk_in   ;
+; N/A   ; None         ; 4.652 ns   ; stack_push   ; stack_reg[7][7]  ; clk_in   ;
+; N/A   ; None         ; 4.652 ns   ; stack_push   ; stack_reg[7][8]  ; clk_in   ;
+; N/A   ; None         ; 4.652 ns   ; stack_push   ; stack_reg[7][9]  ; clk_in   ;
+; N/A   ; None         ; 4.652 ns   ; stack_push   ; stack_reg[7][10] ; clk_in   ;
+; N/A   ; None         ; 4.560 ns   ; stack_pop    ; stack_reg[0][6]  ; clk_in   ;
+; N/A   ; None         ; 4.560 ns   ; stack_pop    ; stack_reg[1][6]  ; clk_in   ;
+; N/A   ; None         ; 4.560 ns   ; stack_pop    ; stack_reg[2][6]  ; clk_in   ;
+; N/A   ; None         ; 4.560 ns   ; stack_pop    ; stack_reg[3][6]  ; clk_in   ;
+; N/A   ; None         ; 4.560 ns   ; stack_pop    ; stack_reg[4][6]  ; clk_in   ;
+; N/A   ; None         ; 4.560 ns   ; stack_pop    ; stack_reg[5][6]  ; clk_in   ;
+; N/A   ; None         ; 4.560 ns   ; stack_pop    ; stack_reg[6][6]  ; clk_in   ;
+; N/A   ; None         ; 4.560 ns   ; stack_pop    ; stack_reg[0][7]  ; clk_in   ;
+; N/A   ; None         ; 4.560 ns   ; stack_pop    ; stack_reg[1][7]  ; clk_in   ;
+; N/A   ; None         ; 4.560 ns   ; stack_pop    ; stack_reg[2][7]  ; clk_in   ;
+; N/A   ; None         ; 4.560 ns   ; stack_pop    ; stack_reg[3][7]  ; clk_in   ;
+; N/A   ; None         ; 4.560 ns   ; stack_pop    ; stack_reg[4][7]  ; clk_in   ;
+; N/A   ; None         ; 4.560 ns   ; stack_pop    ; stack_reg[5][7]  ; clk_in   ;
+; N/A   ; None         ; 4.560 ns   ; stack_pop    ; stack_reg[6][7]  ; clk_in   ;
+; N/A   ; None         ; 4.560 ns   ; stack_pop    ; stack_reg[0][8]  ; clk_in   ;
+; N/A   ; None         ; 4.560 ns   ; stack_pop    ; stack_reg[1][8]  ; clk_in   ;
+; N/A   ; None         ; 4.324 ns   ; stack_push   ; stack_reg[0][0]  ; clk_in   ;
+; N/A   ; None         ; 4.324 ns   ; stack_push   ; stack_reg[1][0]  ; clk_in   ;
+; N/A   ; None         ; 4.324 ns   ; stack_push   ; stack_reg[2][0]  ; clk_in   ;
+; N/A   ; None         ; 4.324 ns   ; stack_push   ; stack_reg[3][0]  ; clk_in   ;
+; N/A   ; None         ; 4.324 ns   ; stack_push   ; stack_reg[4][0]  ; clk_in   ;
+; N/A   ; None         ; 4.324 ns   ; stack_push   ; stack_reg[5][0]  ; clk_in   ;
+; N/A   ; None         ; 4.324 ns   ; stack_push   ; stack_reg[6][0]  ; clk_in   ;
+; N/A   ; None         ; 4.324 ns   ; stack_push   ; stack_reg[0][1]  ; clk_in   ;
+; N/A   ; None         ; 4.324 ns   ; stack_push   ; stack_reg[1][1]  ; clk_in   ;
+; N/A   ; None         ; 4.324 ns   ; stack_push   ; stack_reg[2][1]  ; clk_in   ;
+; N/A   ; None         ; 4.324 ns   ; stack_push   ; stack_reg[3][1]  ; clk_in   ;
+; N/A   ; None         ; 4.324 ns   ; stack_push   ; stack_reg[4][1]  ; clk_in   ;
+; N/A   ; None         ; 4.324 ns   ; stack_push   ; stack_reg[5][1]  ; clk_in   ;
+; N/A   ; None         ; 4.324 ns   ; stack_push   ; stack_reg[6][1]  ; clk_in   ;
+; N/A   ; None         ; 4.324 ns   ; stack_push   ; stack_reg[0][2]  ; clk_in   ;
+; N/A   ; None         ; 4.324 ns   ; stack_push   ; stack_reg[1][2]  ; clk_in   ;
+; N/A   ; None         ; 4.237 ns   ; stack_pop    ; stack_reg[4][2]  ; clk_in   ;
+; N/A   ; None         ; 4.237 ns   ; stack_pop    ; stack_reg[5][2]  ; clk_in   ;
+; N/A   ; None         ; 4.237 ns   ; stack_pop    ; stack_reg[6][2]  ; clk_in   ;
+; N/A   ; None         ; 4.237 ns   ; stack_pop    ; stack_reg[2][5]  ; clk_in   ;
+; N/A   ; None         ; 4.237 ns   ; stack_pop    ; stack_reg[3][5]  ; clk_in   ;
+; N/A   ; None         ; 4.237 ns   ; stack_pop    ; stack_reg[4][5]  ; clk_in   ;
+; N/A   ; None         ; 4.237 ns   ; stack_pop    ; stack_reg[5][5]  ; clk_in   ;
+; N/A   ; None         ; 4.237 ns   ; stack_pop    ; stack_reg[6][5]  ; clk_in   ;
+; N/A   ; None         ; 4.237 ns   ; stack_pop    ; stack_reg[2][8]  ; clk_in   ;
+; N/A   ; None         ; 4.237 ns   ; stack_pop    ; stack_reg[3][8]  ; clk_in   ;
+; N/A   ; None         ; 4.237 ns   ; stack_pop    ; stack_reg[4][8]  ; clk_in   ;
+; N/A   ; None         ; 4.237 ns   ; stack_pop    ; stack_reg[5][8]  ; clk_in   ;
+; N/A   ; None         ; 4.237 ns   ; stack_pop    ; stack_reg[6][8]  ; clk_in   ;
+; N/A   ; None         ; 4.198 ns   ; stack_push   ; stack_reg[0][6]  ; clk_in   ;
+; N/A   ; None         ; 4.198 ns   ; stack_push   ; stack_reg[1][6]  ; clk_in   ;
+; N/A   ; None         ; 4.198 ns   ; stack_push   ; stack_reg[2][6]  ; clk_in   ;
+; N/A   ; None         ; 4.198 ns   ; stack_push   ; stack_reg[3][6]  ; clk_in   ;
+; N/A   ; None         ; 4.198 ns   ; stack_push   ; stack_reg[4][6]  ; clk_in   ;
+; N/A   ; None         ; 4.198 ns   ; stack_push   ; stack_reg[5][6]  ; clk_in   ;
+; N/A   ; None         ; 4.198 ns   ; stack_push   ; stack_reg[6][6]  ; clk_in   ;
+; N/A   ; None         ; 4.198 ns   ; stack_push   ; stack_reg[0][7]  ; clk_in   ;
+; N/A   ; None         ; 4.198 ns   ; stack_push   ; stack_reg[1][7]  ; clk_in   ;
+; N/A   ; None         ; 4.198 ns   ; stack_push   ; stack_reg[2][7]  ; clk_in   ;
+; N/A   ; None         ; 4.198 ns   ; stack_push   ; stack_reg[3][7]  ; clk_in   ;
+; N/A   ; None         ; 4.198 ns   ; stack_push   ; stack_reg[4][7]  ; clk_in   ;
+; N/A   ; None         ; 4.198 ns   ; stack_push   ; stack_reg[5][7]  ; clk_in   ;
+; N/A   ; None         ; 4.198 ns   ; stack_push   ; stack_reg[6][7]  ; clk_in   ;
+; N/A   ; None         ; 4.198 ns   ; stack_push   ; stack_reg[0][8]  ; clk_in   ;
+; N/A   ; None         ; 4.198 ns   ; stack_push   ; stack_reg[1][8]  ; clk_in   ;
+; N/A   ; None         ; 3.875 ns   ; stack_push   ; stack_reg[4][2]  ; clk_in   ;
+; N/A   ; None         ; 3.875 ns   ; stack_push   ; stack_reg[5][2]  ; clk_in   ;
+; N/A   ; None         ; 3.875 ns   ; stack_push   ; stack_reg[6][2]  ; clk_in   ;
+; N/A   ; None         ; 3.875 ns   ; stack_push   ; stack_reg[2][5]  ; clk_in   ;
+; N/A   ; None         ; 3.875 ns   ; stack_push   ; stack_reg[3][5]  ; clk_in   ;
+; N/A   ; None         ; 3.875 ns   ; stack_push   ; stack_reg[4][5]  ; clk_in   ;
+; N/A   ; None         ; 3.875 ns   ; stack_push   ; stack_reg[5][5]  ; clk_in   ;
+; N/A   ; None         ; 3.875 ns   ; stack_push   ; stack_reg[6][5]  ; clk_in   ;
+; N/A   ; None         ; 3.875 ns   ; stack_push   ; stack_reg[2][8]  ; clk_in   ;
+; N/A   ; None         ; 3.875 ns   ; stack_push   ; stack_reg[3][8]  ; clk_in   ;
+; N/A   ; None         ; 3.875 ns   ; stack_push   ; stack_reg[4][8]  ; clk_in   ;
+; N/A   ; None         ; 3.875 ns   ; stack_push   ; stack_reg[5][8]  ; clk_in   ;
+; N/A   ; None         ; 3.875 ns   ; stack_push   ; stack_reg[6][8]  ; clk_in   ;
+; N/A   ; None         ; 3.185 ns   ; stack_in[9]  ; stack_reg[0][9]  ; clk_in   ;
+; N/A   ; None         ; 3.150 ns   ; stack_in[1]  ; stack_reg[0][1]  ; clk_in   ;
+; N/A   ; None         ; 3.088 ns   ; stack_in[3]  ; stack_reg[0][3]  ; clk_in   ;
+; N/A   ; None         ; 3.065 ns   ; stack_in[8]  ; stack_reg[0][8]  ; clk_in   ;
+; N/A   ; None         ; 3.041 ns   ; stack_in[2]  ; stack_reg[0][2]  ; clk_in   ;
+; N/A   ; None         ; 3.002 ns   ; stack_in[7]  ; stack_reg[0][7]  ; clk_in   ;
+; N/A   ; None         ; 2.936 ns   ; stack_in[0]  ; stack_reg[0][0]  ; clk_in   ;
+; N/A   ; None         ; 2.843 ns   ; stack_in[10] ; stack_reg[0][10] ; clk_in   ;
+; N/A   ; None         ; 2.763 ns   ; stack_in[4]  ; stack_reg[0][4]  ; clk_in   ;
+; N/A   ; None         ; 2.721 ns   ; stack_in[5]  ; stack_reg[0][5]  ; clk_in   ;
+; N/A   ; None         ; 2.506 ns   ; stack_in[6]  ; stack_reg[0][6]  ; clk_in   ;
++-------+--------------+------------+--------------+------------------+----------+
+
+
++-----------------------------------------------------------------------------------+
+; tco                                                                               ;
++-------+--------------+------------+------------------+---------------+------------+
+; Slack ; Required tco ; Actual tco ; From             ; To            ; From Clock ;
++-------+--------------+------------+------------------+---------------+------------+
+; N/A   ; None         ; 6.404 ns   ; stack_reg[0][7]  ; stack_out[7]  ; clk_in     ;
+; N/A   ; None         ; 6.138 ns   ; stack_reg[0][8]  ; stack_out[8]  ; clk_in     ;
+; N/A   ; None         ; 6.105 ns   ; stack_reg[0][10] ; stack_out[10] ; clk_in     ;
+; N/A   ; None         ; 6.081 ns   ; stack_reg[0][0]  ; stack_out[0]  ; clk_in     ;
+; N/A   ; None         ; 5.980 ns   ; stack_reg[0][6]  ; stack_out[6]  ; clk_in     ;
+; N/A   ; None         ; 5.754 ns   ; stack_reg[0][3]  ; stack_out[3]  ; clk_in     ;
+; N/A   ; None         ; 5.614 ns   ; stack_reg[0][1]  ; stack_out[1]  ; clk_in     ;
+; N/A   ; None         ; 5.566 ns   ; stack_reg[0][5]  ; stack_out[5]  ; clk_in     ;
+; N/A   ; None         ; 5.433 ns   ; stack_reg[0][4]  ; stack_out[4]  ; clk_in     ;
+; N/A   ; None         ; 5.397 ns   ; stack_reg[0][2]  ; stack_out[2]  ; clk_in     ;
+; N/A   ; None         ; 5.377 ns   ; stack_reg[0][9]  ; stack_out[9]  ; clk_in     ;
++-------+--------------+------------+------------------+---------------+------------+
+
+
++--------------------------------------------------------------------------------------+
+; th                                                                                   ;
++---------------+-------------+-----------+--------------+------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From         ; To               ; To Clock ;
++---------------+-------------+-----------+--------------+------------------+----------+
+; N/A           ; None        ; -2.267 ns ; stack_in[6]  ; stack_reg[0][6]  ; clk_in   ;
+; N/A           ; None        ; -2.482 ns ; stack_in[5]  ; stack_reg[0][5]  ; clk_in   ;
+; N/A           ; None        ; -2.524 ns ; stack_in[4]  ; stack_reg[0][4]  ; clk_in   ;
+; N/A           ; None        ; -2.604 ns ; stack_in[10] ; stack_reg[0][10] ; clk_in   ;
+; N/A           ; None        ; -2.613 ns ; stack_push   ; stack_reg[7][0]  ; clk_in   ;
+; N/A           ; None        ; -2.613 ns ; stack_push   ; stack_reg[7][1]  ; clk_in   ;
+; N/A           ; None        ; -2.613 ns ; stack_push   ; stack_reg[7][2]  ; clk_in   ;
+; N/A           ; None        ; -2.613 ns ; stack_push   ; stack_reg[7][3]  ; clk_in   ;
+; N/A           ; None        ; -2.613 ns ; stack_push   ; stack_reg[7][4]  ; clk_in   ;
+; N/A           ; None        ; -2.613 ns ; stack_push   ; stack_reg[7][5]  ; clk_in   ;
+; N/A           ; None        ; -2.613 ns ; stack_push   ; stack_reg[7][6]  ; clk_in   ;
+; N/A           ; None        ; -2.613 ns ; stack_push   ; stack_reg[7][7]  ; clk_in   ;
+; N/A           ; None        ; -2.613 ns ; stack_push   ; stack_reg[7][8]  ; clk_in   ;
+; N/A           ; None        ; -2.613 ns ; stack_push   ; stack_reg[7][9]  ; clk_in   ;
+; N/A           ; None        ; -2.613 ns ; stack_push   ; stack_reg[7][10] ; clk_in   ;
+; N/A           ; None        ; -2.697 ns ; stack_in[0]  ; stack_reg[0][0]  ; clk_in   ;
+; N/A           ; None        ; -2.742 ns ; stack_push   ; stack_reg[2][2]  ; clk_in   ;
+; N/A           ; None        ; -2.742 ns ; stack_push   ; stack_reg[3][2]  ; clk_in   ;
+; N/A           ; None        ; -2.742 ns ; stack_push   ; stack_reg[0][9]  ; clk_in   ;
+; N/A           ; None        ; -2.742 ns ; stack_push   ; stack_reg[1][9]  ; clk_in   ;
+; N/A           ; None        ; -2.742 ns ; stack_push   ; stack_reg[2][9]  ; clk_in   ;
+; N/A           ; None        ; -2.742 ns ; stack_push   ; stack_reg[3][9]  ; clk_in   ;
+; N/A           ; None        ; -2.742 ns ; stack_push   ; stack_reg[4][9]  ; clk_in   ;
+; N/A           ; None        ; -2.742 ns ; stack_push   ; stack_reg[5][9]  ; clk_in   ;
+; N/A           ; None        ; -2.742 ns ; stack_push   ; stack_reg[6][9]  ; clk_in   ;
+; N/A           ; None        ; -2.742 ns ; stack_push   ; stack_reg[0][10] ; clk_in   ;
+; N/A           ; None        ; -2.742 ns ; stack_push   ; stack_reg[1][10] ; clk_in   ;
+; N/A           ; None        ; -2.742 ns ; stack_push   ; stack_reg[2][10] ; clk_in   ;
+; N/A           ; None        ; -2.742 ns ; stack_push   ; stack_reg[3][10] ; clk_in   ;
+; N/A           ; None        ; -2.742 ns ; stack_push   ; stack_reg[4][10] ; clk_in   ;
+; N/A           ; None        ; -2.742 ns ; stack_push   ; stack_reg[5][10] ; clk_in   ;
+; N/A           ; None        ; -2.742 ns ; stack_push   ; stack_reg[6][10] ; clk_in   ;
+; N/A           ; None        ; -2.763 ns ; stack_in[7]  ; stack_reg[0][7]  ; clk_in   ;
+; N/A           ; None        ; -2.802 ns ; stack_in[2]  ; stack_reg[0][2]  ; clk_in   ;
+; N/A           ; None        ; -2.826 ns ; stack_in[8]  ; stack_reg[0][8]  ; clk_in   ;
+; N/A           ; None        ; -2.849 ns ; stack_in[3]  ; stack_reg[0][3]  ; clk_in   ;
+; N/A           ; None        ; -2.887 ns ; stack_push   ; stack_reg[0][6]  ; clk_in   ;
+; N/A           ; None        ; -2.887 ns ; stack_push   ; stack_reg[1][6]  ; clk_in   ;
+; N/A           ; None        ; -2.887 ns ; stack_push   ; stack_reg[2][6]  ; clk_in   ;
+; N/A           ; None        ; -2.887 ns ; stack_push   ; stack_reg[3][6]  ; clk_in   ;
+; N/A           ; None        ; -2.887 ns ; stack_push   ; stack_reg[4][6]  ; clk_in   ;
+; N/A           ; None        ; -2.887 ns ; stack_push   ; stack_reg[5][6]  ; clk_in   ;
+; N/A           ; None        ; -2.887 ns ; stack_push   ; stack_reg[6][6]  ; clk_in   ;
+; N/A           ; None        ; -2.887 ns ; stack_push   ; stack_reg[0][7]  ; clk_in   ;
+; N/A           ; None        ; -2.887 ns ; stack_push   ; stack_reg[1][7]  ; clk_in   ;
+; N/A           ; None        ; -2.887 ns ; stack_push   ; stack_reg[2][7]  ; clk_in   ;
+; N/A           ; None        ; -2.887 ns ; stack_push   ; stack_reg[3][7]  ; clk_in   ;
+; N/A           ; None        ; -2.887 ns ; stack_push   ; stack_reg[4][7]  ; clk_in   ;
+; N/A           ; None        ; -2.887 ns ; stack_push   ; stack_reg[5][7]  ; clk_in   ;
+; N/A           ; None        ; -2.887 ns ; stack_push   ; stack_reg[6][7]  ; clk_in   ;
+; N/A           ; None        ; -2.887 ns ; stack_push   ; stack_reg[0][8]  ; clk_in   ;
+; N/A           ; None        ; -2.887 ns ; stack_push   ; stack_reg[1][8]  ; clk_in   ;
+; N/A           ; None        ; -2.911 ns ; stack_in[1]  ; stack_reg[0][1]  ; clk_in   ;
+; N/A           ; None        ; -2.946 ns ; stack_in[9]  ; stack_reg[0][9]  ; clk_in   ;
+; N/A           ; None        ; -2.962 ns ; stack_push   ; stack_reg[0][0]  ; clk_in   ;
+; N/A           ; None        ; -2.962 ns ; stack_push   ; stack_reg[1][0]  ; clk_in   ;
+; N/A           ; None        ; -2.962 ns ; stack_push   ; stack_reg[2][0]  ; clk_in   ;
+; N/A           ; None        ; -2.962 ns ; stack_push   ; stack_reg[3][0]  ; clk_in   ;
+; N/A           ; None        ; -2.962 ns ; stack_push   ; stack_reg[4][0]  ; clk_in   ;
+; N/A           ; None        ; -2.962 ns ; stack_push   ; stack_reg[5][0]  ; clk_in   ;
+; N/A           ; None        ; -2.962 ns ; stack_push   ; stack_reg[6][0]  ; clk_in   ;
+; N/A           ; None        ; -2.962 ns ; stack_push   ; stack_reg[0][1]  ; clk_in   ;
+; N/A           ; None        ; -2.962 ns ; stack_push   ; stack_reg[1][1]  ; clk_in   ;
+; N/A           ; None        ; -2.962 ns ; stack_push   ; stack_reg[2][1]  ; clk_in   ;
+; N/A           ; None        ; -2.962 ns ; stack_push   ; stack_reg[3][1]  ; clk_in   ;
+; N/A           ; None        ; -2.962 ns ; stack_push   ; stack_reg[4][1]  ; clk_in   ;
+; N/A           ; None        ; -2.962 ns ; stack_push   ; stack_reg[5][1]  ; clk_in   ;
+; N/A           ; None        ; -2.962 ns ; stack_push   ; stack_reg[6][1]  ; clk_in   ;
+; N/A           ; None        ; -2.962 ns ; stack_push   ; stack_reg[0][2]  ; clk_in   ;
+; N/A           ; None        ; -2.962 ns ; stack_push   ; stack_reg[1][2]  ; clk_in   ;
+; N/A           ; None        ; -2.976 ns ; stack_push   ; stack_reg[0][3]  ; clk_in   ;
+; N/A           ; None        ; -2.976 ns ; stack_push   ; stack_reg[1][3]  ; clk_in   ;
+; N/A           ; None        ; -2.976 ns ; stack_push   ; stack_reg[2][3]  ; clk_in   ;
+; N/A           ; None        ; -2.976 ns ; stack_push   ; stack_reg[3][3]  ; clk_in   ;
+; N/A           ; None        ; -2.976 ns ; stack_push   ; stack_reg[4][3]  ; clk_in   ;
+; N/A           ; None        ; -2.976 ns ; stack_push   ; stack_reg[5][3]  ; clk_in   ;
+; N/A           ; None        ; -2.976 ns ; stack_push   ; stack_reg[6][3]  ; clk_in   ;
+; N/A           ; None        ; -2.976 ns ; stack_push   ; stack_reg[0][4]  ; clk_in   ;
+; N/A           ; None        ; -2.976 ns ; stack_push   ; stack_reg[1][4]  ; clk_in   ;
+; N/A           ; None        ; -2.976 ns ; stack_push   ; stack_reg[2][4]  ; clk_in   ;
+; N/A           ; None        ; -2.976 ns ; stack_push   ; stack_reg[3][4]  ; clk_in   ;
+; N/A           ; None        ; -2.976 ns ; stack_push   ; stack_reg[4][4]  ; clk_in   ;
+; N/A           ; None        ; -2.976 ns ; stack_push   ; stack_reg[5][4]  ; clk_in   ;
+; N/A           ; None        ; -2.976 ns ; stack_push   ; stack_reg[6][4]  ; clk_in   ;
+; N/A           ; None        ; -2.976 ns ; stack_push   ; stack_reg[0][5]  ; clk_in   ;
+; N/A           ; None        ; -2.976 ns ; stack_push   ; stack_reg[1][5]  ; clk_in   ;
+; N/A           ; None        ; -3.002 ns ; stack_push   ; stack_reg[4][2]  ; clk_in   ;
+; N/A           ; None        ; -3.002 ns ; stack_push   ; stack_reg[5][2]  ; clk_in   ;
+; N/A           ; None        ; -3.002 ns ; stack_push   ; stack_reg[6][2]  ; clk_in   ;
+; N/A           ; None        ; -3.002 ns ; stack_push   ; stack_reg[2][5]  ; clk_in   ;
+; N/A           ; None        ; -3.002 ns ; stack_push   ; stack_reg[3][5]  ; clk_in   ;
+; N/A           ; None        ; -3.002 ns ; stack_push   ; stack_reg[4][5]  ; clk_in   ;
+; N/A           ; None        ; -3.002 ns ; stack_push   ; stack_reg[5][5]  ; clk_in   ;
+; N/A           ; None        ; -3.002 ns ; stack_push   ; stack_reg[6][5]  ; clk_in   ;
+; N/A           ; None        ; -3.002 ns ; stack_push   ; stack_reg[2][8]  ; clk_in   ;
+; N/A           ; None        ; -3.002 ns ; stack_push   ; stack_reg[3][8]  ; clk_in   ;
+; N/A           ; None        ; -3.002 ns ; stack_push   ; stack_reg[4][8]  ; clk_in   ;
+; N/A           ; None        ; -3.002 ns ; stack_push   ; stack_reg[5][8]  ; clk_in   ;
+; N/A           ; None        ; -3.002 ns ; stack_push   ; stack_reg[6][8]  ; clk_in   ;
+; N/A           ; None        ; -3.998 ns ; stack_pop    ; stack_reg[4][2]  ; clk_in   ;
+; N/A           ; None        ; -3.998 ns ; stack_pop    ; stack_reg[5][2]  ; clk_in   ;
+; N/A           ; None        ; -3.998 ns ; stack_pop    ; stack_reg[6][2]  ; clk_in   ;
+; N/A           ; None        ; -3.998 ns ; stack_pop    ; stack_reg[2][5]  ; clk_in   ;
+; N/A           ; None        ; -3.998 ns ; stack_pop    ; stack_reg[3][5]  ; clk_in   ;
+; N/A           ; None        ; -3.998 ns ; stack_pop    ; stack_reg[4][5]  ; clk_in   ;
+; N/A           ; None        ; -3.998 ns ; stack_pop    ; stack_reg[5][5]  ; clk_in   ;
+; N/A           ; None        ; -3.998 ns ; stack_pop    ; stack_reg[6][5]  ; clk_in   ;
+; N/A           ; None        ; -3.998 ns ; stack_pop    ; stack_reg[2][8]  ; clk_in   ;
+; N/A           ; None        ; -3.998 ns ; stack_pop    ; stack_reg[3][8]  ; clk_in   ;
+; N/A           ; None        ; -3.998 ns ; stack_pop    ; stack_reg[4][8]  ; clk_in   ;
+; N/A           ; None        ; -3.998 ns ; stack_pop    ; stack_reg[5][8]  ; clk_in   ;
+; N/A           ; None        ; -3.998 ns ; stack_pop    ; stack_reg[6][8]  ; clk_in   ;
+; N/A           ; None        ; -4.321 ns ; stack_pop    ; stack_reg[0][6]  ; clk_in   ;
+; N/A           ; None        ; -4.321 ns ; stack_pop    ; stack_reg[1][6]  ; clk_in   ;
+; N/A           ; None        ; -4.321 ns ; stack_pop    ; stack_reg[2][6]  ; clk_in   ;
+; N/A           ; None        ; -4.321 ns ; stack_pop    ; stack_reg[3][6]  ; clk_in   ;
+; N/A           ; None        ; -4.321 ns ; stack_pop    ; stack_reg[4][6]  ; clk_in   ;
+; N/A           ; None        ; -4.321 ns ; stack_pop    ; stack_reg[5][6]  ; clk_in   ;
+; N/A           ; None        ; -4.321 ns ; stack_pop    ; stack_reg[6][6]  ; clk_in   ;
+; N/A           ; None        ; -4.321 ns ; stack_pop    ; stack_reg[0][7]  ; clk_in   ;
+; N/A           ; None        ; -4.321 ns ; stack_pop    ; stack_reg[1][7]  ; clk_in   ;
+; N/A           ; None        ; -4.321 ns ; stack_pop    ; stack_reg[2][7]  ; clk_in   ;
+; N/A           ; None        ; -4.321 ns ; stack_pop    ; stack_reg[3][7]  ; clk_in   ;
+; N/A           ; None        ; -4.321 ns ; stack_pop    ; stack_reg[4][7]  ; clk_in   ;
+; N/A           ; None        ; -4.321 ns ; stack_pop    ; stack_reg[5][7]  ; clk_in   ;
+; N/A           ; None        ; -4.321 ns ; stack_pop    ; stack_reg[6][7]  ; clk_in   ;
+; N/A           ; None        ; -4.321 ns ; stack_pop    ; stack_reg[0][8]  ; clk_in   ;
+; N/A           ; None        ; -4.321 ns ; stack_pop    ; stack_reg[1][8]  ; clk_in   ;
+; N/A           ; None        ; -4.447 ns ; stack_pop    ; stack_reg[0][0]  ; clk_in   ;
+; N/A           ; None        ; -4.447 ns ; stack_pop    ; stack_reg[1][0]  ; clk_in   ;
+; N/A           ; None        ; -4.447 ns ; stack_pop    ; stack_reg[2][0]  ; clk_in   ;
+; N/A           ; None        ; -4.447 ns ; stack_pop    ; stack_reg[3][0]  ; clk_in   ;
+; N/A           ; None        ; -4.447 ns ; stack_pop    ; stack_reg[4][0]  ; clk_in   ;
+; N/A           ; None        ; -4.447 ns ; stack_pop    ; stack_reg[5][0]  ; clk_in   ;
+; N/A           ; None        ; -4.447 ns ; stack_pop    ; stack_reg[6][0]  ; clk_in   ;
+; N/A           ; None        ; -4.447 ns ; stack_pop    ; stack_reg[0][1]  ; clk_in   ;
+; N/A           ; None        ; -4.447 ns ; stack_pop    ; stack_reg[1][1]  ; clk_in   ;
+; N/A           ; None        ; -4.447 ns ; stack_pop    ; stack_reg[2][1]  ; clk_in   ;
+; N/A           ; None        ; -4.447 ns ; stack_pop    ; stack_reg[3][1]  ; clk_in   ;
+; N/A           ; None        ; -4.447 ns ; stack_pop    ; stack_reg[4][1]  ; clk_in   ;
+; N/A           ; None        ; -4.447 ns ; stack_pop    ; stack_reg[5][1]  ; clk_in   ;
+; N/A           ; None        ; -4.447 ns ; stack_pop    ; stack_reg[6][1]  ; clk_in   ;
+; N/A           ; None        ; -4.447 ns ; stack_pop    ; stack_reg[0][2]  ; clk_in   ;
+; N/A           ; None        ; -4.447 ns ; stack_pop    ; stack_reg[1][2]  ; clk_in   ;
+; N/A           ; None        ; -4.775 ns ; stack_pop    ; stack_reg[7][0]  ; clk_in   ;
+; N/A           ; None        ; -4.775 ns ; stack_pop    ; stack_reg[7][1]  ; clk_in   ;
+; N/A           ; None        ; -4.775 ns ; stack_pop    ; stack_reg[7][2]  ; clk_in   ;
+; N/A           ; None        ; -4.775 ns ; stack_pop    ; stack_reg[7][3]  ; clk_in   ;
+; N/A           ; None        ; -4.775 ns ; stack_pop    ; stack_reg[7][4]  ; clk_in   ;
+; N/A           ; None        ; -4.775 ns ; stack_pop    ; stack_reg[7][5]  ; clk_in   ;
+; N/A           ; None        ; -4.775 ns ; stack_pop    ; stack_reg[7][6]  ; clk_in   ;
+; N/A           ; None        ; -4.775 ns ; stack_pop    ; stack_reg[7][7]  ; clk_in   ;
+; N/A           ; None        ; -4.775 ns ; stack_pop    ; stack_reg[7][8]  ; clk_in   ;
+; N/A           ; None        ; -4.775 ns ; stack_pop    ; stack_reg[7][9]  ; clk_in   ;
+; N/A           ; None        ; -4.775 ns ; stack_pop    ; stack_reg[7][10] ; clk_in   ;
+; N/A           ; None        ; -4.811 ns ; stack_pop    ; stack_reg[0][3]  ; clk_in   ;
+; N/A           ; None        ; -4.811 ns ; stack_pop    ; stack_reg[1][3]  ; clk_in   ;
+; N/A           ; None        ; -4.811 ns ; stack_pop    ; stack_reg[2][3]  ; clk_in   ;
+; N/A           ; None        ; -4.811 ns ; stack_pop    ; stack_reg[3][3]  ; clk_in   ;
+; N/A           ; None        ; -4.811 ns ; stack_pop    ; stack_reg[4][3]  ; clk_in   ;
+; N/A           ; None        ; -4.811 ns ; stack_pop    ; stack_reg[5][3]  ; clk_in   ;
+; N/A           ; None        ; -4.811 ns ; stack_pop    ; stack_reg[6][3]  ; clk_in   ;
+; N/A           ; None        ; -4.811 ns ; stack_pop    ; stack_reg[0][4]  ; clk_in   ;
+; N/A           ; None        ; -4.811 ns ; stack_pop    ; stack_reg[1][4]  ; clk_in   ;
+; N/A           ; None        ; -4.811 ns ; stack_pop    ; stack_reg[2][4]  ; clk_in   ;
+; N/A           ; None        ; -4.811 ns ; stack_pop    ; stack_reg[3][4]  ; clk_in   ;
+; N/A           ; None        ; -4.811 ns ; stack_pop    ; stack_reg[4][4]  ; clk_in   ;
+; N/A           ; None        ; -4.811 ns ; stack_pop    ; stack_reg[5][4]  ; clk_in   ;
+; N/A           ; None        ; -4.811 ns ; stack_pop    ; stack_reg[6][4]  ; clk_in   ;
+; N/A           ; None        ; -4.811 ns ; stack_pop    ; stack_reg[0][5]  ; clk_in   ;
+; N/A           ; None        ; -4.811 ns ; stack_pop    ; stack_reg[1][5]  ; clk_in   ;
+; N/A           ; None        ; -5.019 ns ; stack_pop    ; stack_reg[2][2]  ; clk_in   ;
+; N/A           ; None        ; -5.019 ns ; stack_pop    ; stack_reg[3][2]  ; clk_in   ;
+; N/A           ; None        ; -5.019 ns ; stack_pop    ; stack_reg[0][9]  ; clk_in   ;
+; N/A           ; None        ; -5.019 ns ; stack_pop    ; stack_reg[1][9]  ; clk_in   ;
+; N/A           ; None        ; -5.019 ns ; stack_pop    ; stack_reg[2][9]  ; clk_in   ;
+; N/A           ; None        ; -5.019 ns ; stack_pop    ; stack_reg[3][9]  ; clk_in   ;
+; N/A           ; None        ; -5.019 ns ; stack_pop    ; stack_reg[4][9]  ; clk_in   ;
+; N/A           ; None        ; -5.019 ns ; stack_pop    ; stack_reg[5][9]  ; clk_in   ;
+; N/A           ; None        ; -5.019 ns ; stack_pop    ; stack_reg[6][9]  ; clk_in   ;
+; N/A           ; None        ; -5.019 ns ; stack_pop    ; stack_reg[0][10] ; clk_in   ;
+; N/A           ; None        ; -5.019 ns ; stack_pop    ; stack_reg[1][10] ; clk_in   ;
+; N/A           ; None        ; -5.019 ns ; stack_pop    ; stack_reg[2][10] ; clk_in   ;
+; N/A           ; None        ; -5.019 ns ; stack_pop    ; stack_reg[3][10] ; clk_in   ;
+; N/A           ; None        ; -5.019 ns ; stack_pop    ; stack_reg[4][10] ; clk_in   ;
+; N/A           ; None        ; -5.019 ns ; stack_pop    ; stack_reg[5][10] ; clk_in   ;
+; N/A           ; None        ; -5.019 ns ; stack_pop    ; stack_reg[6][10] ; clk_in   ;
++---------------+-------------+-----------+--------------+------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Mon May 12 17:19:17 2025
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off Stack -c Stack --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk_in" is an undefined clock
+Info: Clock "clk_in" Internal fmax is restricted to 500.0 MHz between source register "stack_reg[4][2]" and destination register "stack_reg[3][2]"
+    Info: fmax restricted to clock pin edge rate 2.0 ns. Expand message to see actual delay path.
+        Info: + Longest register to register delay is 1.146 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X25_Y4_N29; Fanout = 2; REG Node = 'stack_reg[4][2]'
+            Info: 2: + IC(0.837 ns) + CELL(0.309 ns) = 1.146 ns; Loc. = LCFF_X29_Y6_N19; Fanout = 2; REG Node = 'stack_reg[3][2]'
+            Info: Total cell delay = 0.309 ns ( 26.96 % )
+            Info: Total interconnect delay = 0.837 ns ( 73.04 % )
+        Info: - Smallest clock skew is -0.018 ns
+            Info: + Shortest clock path from clock "clk_in" to destination register is 2.469 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'clk_in'
+                Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 88; COMB Node = 'clk_in~clkctrl'
+                Info: 3: + IC(0.654 ns) + CELL(0.618 ns) = 2.469 ns; Loc. = LCFF_X29_Y6_N19; Fanout = 2; REG Node = 'stack_reg[3][2]'
+                Info: Total cell delay = 1.472 ns ( 59.62 % )
+                Info: Total interconnect delay = 0.997 ns ( 40.38 % )
+            Info: - Longest clock path from clock "clk_in" to source register is 2.487 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'clk_in'
+                Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 88; COMB Node = 'clk_in~clkctrl'
+                Info: 3: + IC(0.672 ns) + CELL(0.618 ns) = 2.487 ns; Loc. = LCFF_X25_Y4_N29; Fanout = 2; REG Node = 'stack_reg[4][2]'
+                Info: Total cell delay = 1.472 ns ( 59.19 % )
+                Info: Total interconnect delay = 1.015 ns ( 40.81 % )
+        Info: + Micro clock to output delay of source is 0.094 ns
+        Info: + Micro setup delay of destination is 0.090 ns
+Info: tsu for register "stack_reg[2][2]" (data pin = "stack_pop", clock pin = "clk_in") is 5.258 ns
+    Info: + Longest pin to register delay is 7.637 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.817 ns) = 0.817 ns; Loc. = PIN_T9; Fanout = 1; PIN Node = 'stack_pop'
+        Info: 2: + IC(4.382 ns) + CELL(0.366 ns) = 5.565 ns; Loc. = LCCOMB_X25_Y4_N10; Fanout = 88; COMB Node = 'stack_reg[1][0]~0'
+        Info: 3: + IC(1.326 ns) + CELL(0.746 ns) = 7.637 ns; Loc. = LCFF_X29_Y6_N1; Fanout = 2; REG Node = 'stack_reg[2][2]'
+        Info: Total cell delay = 1.929 ns ( 25.26 % )
+        Info: Total interconnect delay = 5.708 ns ( 74.74 % )
+    Info: + Micro setup delay of destination is 0.090 ns
+    Info: - Shortest clock path from clock "clk_in" to destination register is 2.469 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'clk_in'
+        Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 88; COMB Node = 'clk_in~clkctrl'
+        Info: 3: + IC(0.654 ns) + CELL(0.618 ns) = 2.469 ns; Loc. = LCFF_X29_Y6_N1; Fanout = 2; REG Node = 'stack_reg[2][2]'
+        Info: Total cell delay = 1.472 ns ( 59.62 % )
+        Info: Total interconnect delay = 0.997 ns ( 40.38 % )
+Info: tco from clock "clk_in" to destination pin "stack_out[7]" through register "stack_reg[0][7]" is 6.404 ns
+    Info: + Longest clock path from clock "clk_in" to source register is 2.473 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'clk_in'
+        Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 88; COMB Node = 'clk_in~clkctrl'
+        Info: 3: + IC(0.658 ns) + CELL(0.618 ns) = 2.473 ns; Loc. = LCFF_X25_Y7_N23; Fanout = 2; REG Node = 'stack_reg[0][7]'
+        Info: Total cell delay = 1.472 ns ( 59.52 % )
+        Info: Total interconnect delay = 1.001 ns ( 40.48 % )
+    Info: + Micro clock to output delay of source is 0.094 ns
+    Info: + Longest register to pin delay is 3.837 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X25_Y7_N23; Fanout = 2; REG Node = 'stack_reg[0][7]'
+        Info: 2: + IC(1.855 ns) + CELL(1.982 ns) = 3.837 ns; Loc. = PIN_A8; Fanout = 0; PIN Node = 'stack_out[7]'
+        Info: Total cell delay = 1.982 ns ( 51.65 % )
+        Info: Total interconnect delay = 1.855 ns ( 48.35 % )
+Info: th for register "stack_reg[0][6]" (data pin = "stack_in[6]", clock pin = "clk_in") is -2.267 ns
+    Info: + Longest clock path from clock "clk_in" to destination register is 2.473 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'clk_in'
+        Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 88; COMB Node = 'clk_in~clkctrl'
+        Info: 3: + IC(0.658 ns) + CELL(0.618 ns) = 2.473 ns; Loc. = LCFF_X25_Y7_N1; Fanout = 2; REG Node = 'stack_reg[0][6]'
+        Info: Total cell delay = 1.472 ns ( 59.52 % )
+        Info: Total interconnect delay = 1.001 ns ( 40.48 % )
+    Info: + Micro hold delay of destination is 0.149 ns
+    Info: - Shortest pin to register delay is 4.889 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.772 ns) = 0.772 ns; Loc. = PIN_Y9; Fanout = 1; PIN Node = 'stack_in[6]'
+        Info: 2: + IC(3.909 ns) + CELL(0.053 ns) = 4.734 ns; Loc. = LCCOMB_X25_Y7_N0; Fanout = 1; COMB Node = 'stack_reg[0][6]~feeder'
+        Info: 3: + IC(0.000 ns) + CELL(0.155 ns) = 4.889 ns; Loc. = LCFF_X25_Y7_N1; Fanout = 2; REG Node = 'stack_reg[0][6]'
+        Info: Total cell delay = 0.980 ns ( 20.04 % )
+        Info: Total interconnect delay = 3.909 ns ( 79.96 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 178 megabytes
+    Info: Processing ended: Mon May 12 17:19:18 2025
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+
